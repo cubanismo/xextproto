@@ -21,7 +21,7 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  */
-/* $XFree86: xc/include/extensions/lbxopts.h,v 1.6 2001/10/28 03:32:26 tsi Exp $ */
+/* $XFree86$ */
 
 #ifndef _LBX_OPTS_H_
 #define _LBX_OPTS_H_
