@@ -20,7 +20,7 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  */
-/* $XFree86$ */
+/* $XFree86: xc/include/extensions/lbxstr.h,v 1.3 2001/11/23 19:21:30 dawes Exp $ */
  
 #ifndef _LBXSTR_H_
 #define _LBXSTR_H_
