@@ -1,3 +1,4 @@
+/* $XFree86: xc/include/extensions/Xag.h,v 1.5 2001/12/17 20:52:24 dawes Exp $ */
 /*
 Copyright 1996, 1998  The Open Group
 
@@ -51,11 +52,7 @@ from The Open Group.
 
 #ifndef _XAG_SERVER_
 
-#if NeedVarargsPrototypes
 #include <stdarg.h>
-#else
-#include <varargs.h>
-#endif
 
 _XFUNCPROTOBEGIN
 

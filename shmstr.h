@@ -1,3 +1,4 @@
+/* $XFree86: xc/include/extensions/shmstr.h,v 3.3 2001/12/14 19:53:29 dawes Exp $ */
 /************************************************************
 
 Copyright 1989, 1998  The Open Group
@@ -45,9 +46,39 @@ in this Software without prior written authorization from The Open Group.
 #define SHM_MINOR_VERSION	1
 
 #ifdef _XSHM_SERVER_
+#if NeedFunctionPrototypes
+#define XSHM_PUT_IMAGE_ARGS \
+    DrawablePtr		/* dst */, \
+    GCPtr		/* pGC */, \
+    int			/* depth */, \
+    unsigned int	/* format */, \
+    int			/* w */, \
+    int			/* h */, \
+    int			/* sx */, \
+    int			/* sy */, \
+    int			/* sw */, \
+    int			/* sh */, \
+    int			/* dx */, \
+    int			/* dy */, \
+    char *		/* data */
+#else
+#define XSHM_PUT_IMAGE_ARGS /* nothing */
+#endif
+
+#if NeedFunctionPrototypes
+#define XSHM_CREATE_PIXMAP_ARGS \
+    ScreenPtr	/* pScreen */, \
+    int		/* width */, \
+    int		/* height */, \
+    int		/* depth */, \
+    char *	/* addr */
+#else
+#define XSHM_CREATE_PIXMAP_ARGS /* nothing */
+#endif
+
 typedef struct _ShmFuncs {
-    PixmapPtr	(* CreatePixmap)();
-    void	(* PutImage)();
+    PixmapPtr	(* CreatePixmap)(XSHM_CREATE_PIXMAP_ARGS);
+    void	(* PutImage)(XSHM_PUT_IMAGE_ARGS);
 } ShmFuncs, *ShmFuncsPtr;
 #endif
 

@@ -1,3 +1,4 @@
+/* $XFree86: xc/include/extensions/shape.h,v 1.3 2001/12/14 19:53:29 dawes Exp $ */
 /************************************************************
 
 Copyright 1989, 1998  The Open Group
@@ -56,6 +57,9 @@ in this Software without prior written authorization from The Open Group.
 #define ShapeNumberEvents		(ShapeNotify + 1)
 
 #ifndef _SHAPE_SERVER_
+
+#include <X11/Xutil.h>
+
 typedef struct {
     int	type;		    /* of event */
     unsigned long serial;   /* # of last request processed by server */

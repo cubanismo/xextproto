@@ -24,6 +24,8 @@ used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from The Open Group.
  */
 
+/* $XFree86: xc/include/extensions/multibuf.h,v 3.4 2001/12/14 19:53:28 dawes Exp $ */
+
 #ifndef _MULTIBUF_H_
 #define _MULTIBUF_H_
 
@@ -294,13 +296,58 @@ _XFUNCPROTOEND
 
 #else
 
-typedef Bool	(* mbInitFunc)();
-extern void	RegisterMultibufferInit();
-extern void	RegisterDoubleBufferHardware();
+#include "scrnintstr.h"
 
-extern int	CreateImageBuffers ();
-extern void	DestroyImageBuffers ();
-extern int	DisplayImageBuffers ();
+typedef Bool	(* mbInitFunc)();
+
+struct _mbufScreen;		/* declared in multibufst.h */
+
+extern void	RegisterMultibufferInit(
+#if NeedFunctionPrototypes
+    ScreenPtr			/* pScreen */,
+    Bool (* /* bufMultibufferInit */)(
+#if NeedNestedPrototypes
+	ScreenPtr		/* pScreen */,
+	struct _mbufScreen *	/* pMBScreen */
+#endif
+    )
+#endif
+);
+
+struct xMbufBufferInfo;		/* declared in multibufst.h */
+
+extern void	RegisterDoubleBufferHardware(
+#if NeedFunctionPrototypes
+    ScreenPtr			/* pScreen */,
+    int				/* nInfo */,
+    struct xMbufBufferInfo *	/* pInfo */,
+    DevUnion *			/* frameBuffer */,
+    DevUnion			/* selectPlane */,
+    void (* /* CopyBufferBitsFunc */ )(),
+    void (* /* DrawSelectPlaneFunc */ )()
+#endif
+);
+
+extern int	CreateImageBuffers (
+#if NeedFunctionPrototypes
+    WindowPtr			/* pWin */,
+    int				/* nbuf */,
+    XID *			/* ids */,
+    int				/* action */,
+    int				/* hint */
+#endif
+);
+extern void	DestroyImageBuffers (
+#if NeedFunctionPrototypes
+    WindowPtr			/* pWin */
+#endif
+);
+extern int	DisplayImageBuffers (
+#if NeedFunctionPrototypes
+    XID *			/* ids */,
+    int				/* nbuf */
+#endif
+);
 
 #endif /* _MULTIBUF_SERVER_ */
 #endif /* _MULTIBUF_H_ */

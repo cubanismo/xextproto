@@ -23,6 +23,7 @@ Except as contained in this notice, the name of The Open Group shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from The Open Group.
  */
+/* $XFree86: xc/include/extensions/Xext.h,v 1.4 2001/12/14 19:53:28 dawes Exp $ */
 
 #ifndef _XEXT_H_
 #define _XEXT_H_
@@ -41,7 +42,13 @@ extern int (*XSetExtensionErrorHandler(
 #endif
 		   )
 #endif
-))();
+))(
+#if NeedNestedPrototypes
+		   Display *,
+		   char *,
+		   char *
+#endif
+);
 
 extern int XMissingExtension(
 #if NeedFunctionPrototypes

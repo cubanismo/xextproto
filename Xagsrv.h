@@ -1,3 +1,4 @@
+/* $XFree86: xc/include/extensions/Xagsrv.h,v 1.4 2001/12/20 19:25:43 tsi Exp $ */
 /*
 Copyright 1996, 1998  The Open Group
 
@@ -27,6 +28,10 @@ from The Open Group.
 
 #ifndef _XAGSRV_H_
 #define _XAGSRV_H_
+
+#include <X11/Xfuncproto.h>
+
+_XFUNCPROTOBEGIN
 
 extern void XagExtensionInit(
 #if NeedFunctionPrototypes
@@ -86,6 +91,8 @@ extern void XagGetDeltaInfo (
     CARD32*			/* buf */
 #endif
 );
+
+_XFUNCPROTOEND
 
 #endif /* _XAGSRV_H_ */
 

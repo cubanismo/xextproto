@@ -1,3 +1,4 @@
+/* $XFree86: xc/include/extensions/Xagstr.h,v 1.5 2001/12/17 20:52:24 dawes Exp $ */
 /*
 Copyright 1996, 1998, 2001  The Open Group
 
@@ -28,7 +29,7 @@ from The Open Group.
 #ifndef _XAGSTR_H_ /* { */
 #define _XAGSTR_H_
 
-#include "Xag.h"
+#include <X11/extensions/Xag.h>
 
 #define XAppGroup CARD32
 
@@ -43,16 +44,16 @@ from The Open Group.
 #define XagWindowTypeWin16	3
 
 /*
- * Redefine some basic types used by structures defined herein.  This allows
- * both the library and server to view communicated data as 32-bit entities,
- * thus preventing problems on 64-bit architectures where libXext sees this
- * data as 64 bits and the server sees it as 32 bits.
- */
-
+* Redefine some basic types used by structures defined herein.  This allows
+* both the library and server to view communicated data as 32-bit entities,
+* thus preventing problems on 64-bit architectures where libXext sees this
+* data as 64 bits and the server sees it as 32 bits.
+*/
+ 
 #define Colormap CARD32
 #define VisualID CARD32
 #define Window CARD32
-
+ 
 typedef struct _XagQueryVersion {
     CARD8	reqType;	/* always XagReqCode */
     CARD8	xagReqType;	/* always X_XagQueryVersion */
@@ -168,7 +169,6 @@ typedef struct _XagDestroyAssoc {
 #define sz_xXagDestroyAssocReq		8
 
 #undef XAppGroup
-
 /*
  * Cancel the previous redefinition of the basic types, thus restoring their
  * X.h definitions.

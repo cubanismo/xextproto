@@ -21,6 +21,7 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  */
+/* $XFree86: xc/include/extensions/lbxopts.h,v 1.6 2001/10/28 03:32:26 tsi Exp $ */
 
 #ifndef _LBX_OPTS_H_
 #define _LBX_OPTS_H_
@@ -51,7 +52,7 @@
 	(size) = LBX_OPT_SMALLLEN_SIZE; \
     } \
     else { \
-	(len) = LBX_OPT_BIGLEN_MIN + (p)[1] << 8 | (p)[2]; \
+	(len) = ((LBX_OPT_BIGLEN_MIN + (p)[1]) << 8) | (p)[2]; \
 	(size) = LBX_OPT_BIGLEN_SIZE; \
     }
 
@@ -85,13 +86,17 @@ struct iovec {
 };
 
 #else
+#ifndef Lynx
 #include <sys/uio.h>
+#else
+#include <uio.h>
+#endif
 #endif
 
 typedef void *LbxStreamCompHandle;
 
 typedef struct _LbxStreamOpts {
-    LbxStreamCompHandle	(*streamCompInit)();
+    LbxStreamCompHandle	(*streamCompInit)(int fd, pointer arg);
     pointer		streamCompArg;
     int			(*streamCompStuffInput)(
 			    int fd,

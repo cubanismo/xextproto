@@ -24,6 +24,8 @@ used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from The Open Group.
  */
 
+/* $XFree86: xc/include/extensions/multibufst.h,v 3.8 2001/12/19 21:37:29 dawes Exp $ */
+
 #ifndef _MULTIBUFST_H_
 #define _MULTIBUFST_H_
 
@@ -33,10 +35,10 @@ in this Software without prior written authorization from The Open Group.
 
 #include "multibuf.h"
 #ifdef _MULTIBUF_SERVER_
-#include "input.h"
+#include "inputstr.h"
 #endif
 
-#if (defined(__STDC__) && !defined(UNIXCPP)) || defined(ANSICPP)
+#if !defined(UNIXCPP) || defined(ANSICPP)
 #define MbufGetReq(name,req,info) GetReq (name, req); \
 	req->reqType = info->codes->major_opcode; \
 	req->mbufReqType = X_##name;
@@ -51,7 +53,7 @@ in this Software without prior written authorization from The Open Group.
 #define VisualID CARD32
 #define Multibuffer CARD32
 
-typedef struct {
+typedef struct xMbufBufferInfo {
 	CARD32	visualID B32;		/* associated visual */
 	CARD16	maxBuffers B16;		/* maximum supported buffers */
 	CARD8	depth;			/* depth of visual (redundant) */
@@ -263,7 +265,11 @@ typedef struct {
     CARD16	width B16;
     CARD16	height B16;
     CARD16	borderWidth B16;  
+#if defined(__cplusplus) || defined(c_plusplus)
+    CARD16	c_class B16;
+#else
     CARD16	class B16;
+#endif
     VisualID	visual B32;
     CARD32	mask B32;
 } xMbufCreateStereoWindowReq;		/* followed by value list */
@@ -303,7 +309,7 @@ typedef struct {
     pSTRUCT2->FUNC_NAME = tmpFn;					\
 }
 
-#if (defined(__STDC__) && !defined(UNIXCPP)) || defined(ANSICPP)
+#if !defined(UNIXCPP) || defined(ANSICPP)
 #define WRAP_SCREEN_FUNC(pSCREEN,pPRIV,FUNC_NAME, PRIV_FUNC_NAME)	\
 {									\
     if ((pPRIV->funcsWrapped & FUNC_NAME##Mask) == 0)			\
@@ -355,6 +361,64 @@ typedef struct {
 }
 #endif
 
+/* The _Multibuffer and _Multibuffers structures below refer to each other,
+ * so we need this forward declaration
+ */
+typedef struct _Multibuffers	*MultibuffersPtr;
+
+/*
+ * per-Multibuffer data
+ */
+ 
+typedef struct _Multibuffer {
+    MultibuffersPtr pMultibuffers;  /* associated window data */
+    Mask	    eventMask;	    /* MultibufferClobberNotifyMask|ExposureMask|MultibufferUpdateNotifyMask */
+    Mask	    otherEventMask; /* mask of all other clients event masks */
+    OtherClients    *otherClients;  /* other clients that want events */
+    int		    number;	    /* index of this buffer into array */
+    int		    side;	    /* always Mono */
+    int		    clobber;	    /* Unclobbered, PartiallyClobbered, FullClobbered */
+    PixmapPtr	    pPixmap;	    /* associated pixmap */
+} MultibufferRec, *MultibufferPtr;
+
+/*
+ * per-window data
+ */
+
+typedef struct _Multibuffers {
+    WindowPtr	pWindow;		/* associated window */
+    int		numMultibuffer;		/* count of buffers */
+    int		refcnt;			/* ref count for delete */
+    int		displayedMultibuffer;	/* currently active buffer */
+    int		updateAction;		/* Undefined, Background, Untouched, Copied */
+    int		updateHint;		/* Frequent, Intermittent, Static */
+    int		windowMode;		/* always Mono */
+
+    TimeStamp	lastUpdate;		/* time of last update */
+
+    unsigned short	width, height;	/* last known window size */
+    short		x, y;		/* for static gravity */
+
+    MultibufferPtr	buffers;        /* array of numMultibuffer buffers */
+} MultibuffersRec;
+
+/*
+ * per-screen data
+ */
+typedef struct _MultibufferScreen {
+    PositionWindowProcPtr PositionWindow;		/* pWin, x,y */
+} MultibufferScreenRec, *MultibufferScreenPtr;
+
+/*
+ * per display-image-buffers request data.
+ */
+
+typedef struct _DisplayRequest {
+    struct _DisplayRequest	*next;
+    TimeStamp			activateTime;
+    ClientPtr			pClient;
+    XID				id;
+} DisplayRequestRec, *DisplayRequestPtr;
 
 #define DestroyWindowMask		(1L<<0)
 #define PositionWindowMask		(1L<<1)
@@ -370,9 +434,23 @@ extern int		MultibufferWindowIndex;
 
 extern RESTYPE		MultibufferDrawableResType;
 
-extern void		MultibufferUpdate();	/* pMbuffer, time */
-extern void		MultibufferExpose();	/* pMbuffer, pRegion */
-extern void		MultibufferClobber();	/* pMbuffer */
+extern void		MultibufferUpdate(	/* pMbuffer, time */
+#if NeedFunctionPrototypes
+				MultibufferPtr /* pMultibuffer */,
+				CARD32 /* time */
+#endif
+				);
+extern void		MultibufferExpose(	/* pMbuffer, pRegion */
+#if NeedFunctionPrototypes
+				MultibufferPtr /* pMultibuffer */,
+				RegionPtr /* pRegion */
+#endif
+				);
+extern void		MultibufferClobber(	/* pMbuffer */
+#if NeedFunctionPrototypes
+				MultibufferPtr /* pMultibuffer */
+#endif
+				);
 
 typedef struct _mbufWindow	*mbufWindowPtr;
 
@@ -429,22 +507,70 @@ typedef struct _mbufScreen {
     long mbufWindowCount;		/* count of multibuffered windows */
 
     /* Wrap pScreen->DestroyWindow */
-    Bool (* DestroyWindow)();		/* pWin */
+    DestroyWindowProcPtr DestroyWindow;
     long funcsWrapped;			/* flags which functions are wrapped */
 
     /* Initialized by device-dependent section */
     int  nInfo;				/* number of buffer info rec's */
     xMbufBufferInfo *pInfo;		/* buffer info (for Normal buffers) */
 
-    int  (* CreateImageBuffers)();      /* pWin, nbuf, ids, action, hint */
-    void (* DestroyImageBuffers)();     /* pWin */
-    void (* DisplayImageBuffers)();     /* pScrn, ppMBWin, ppMBBuffer, nbuf */
-    void (* ClearImageBufferArea)();    /* pMBBuffer, x,y, w,h, exposures */
-    Bool (* ChangeMBufferAttributes)(); /* pMBWindow, vmask */ 
-    Bool (* ChangeBufferAttributes)();  /* pMBBuffer, vmask */
-    void (* DeleteBufferDrawable)();    /* pDrawable */
-    void (* WrapScreenFuncs)();		/* pScreen */
-    void (* ResetProc)();		/* pScreen */
+    int  (* CreateImageBuffers)(
+#if NeedNestedPrototypes
+		WindowPtr		/* pWin */,
+		int			/* nbuf */,
+		XID *			/* ids */,
+		int			/* action */,
+		int			/* hint */
+#endif
+    		);
+    void (* DestroyImageBuffers)(
+#if NeedNestedPrototypes
+		WindowPtr		/* pWin */
+#endif
+    		);
+    void (* DisplayImageBuffers)(
+#if NeedNestedPrototypes
+		ScreenPtr		/* pScreen */,
+		mbufBufferPtr *		/* ppMBBuffer */,
+		mbufWindowPtr *		/* ppMBWindow */,
+		int			/* nbuf */
+#endif
+    		);
+    void (* ClearImageBufferArea)(
+#if NeedNestedPrototypes
+		mbufBufferPtr		/* pMBBuffer */,
+		short			/* x */,
+		short			/* y */,
+		unsigned short		/* width */,
+		unsigned short		/* height */,
+		Bool			/* exposures */
+#endif
+    		);
+    Bool (* ChangeMBufferAttributes)(	/* pMBWindow, vmask */ 
+#if NeedNestedPrototypes
+    		/* FIXME */
+#endif
+    		);
+    Bool (* ChangeBufferAttributes)(	/* pMBBuffer, vmask */
+#if NeedNestedPrototypes
+    		/* FIXME */
+#endif
+    		);
+    void (* DeleteBufferDrawable)(
+#if NeedNestedPrototypes
+		DrawablePtr		/* pDrawable */
+#endif
+    		);
+    void (* WrapScreenFuncs)(
+#if NeedNestedPrototypes
+		ScreenPtr		/* pScreen */
+#endif
+    		);
+    void (* ResetProc)(
+#if NeedNestedPrototypes
+		ScreenPtr		/* pScreen */
+#endif
+    		);
     DevUnion	devPrivate;
 } mbufScreenRec, *mbufScreenPtr;
 

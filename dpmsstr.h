@@ -31,7 +31,7 @@ Equipment Corporation.
  * HISTORY
  */
 /*
- * @(#)$RCSfile$ $Revision$ (DEC) $Date$
+ * @(#)RCSfile: dpmsstr.h,v Revision: 1.1.4.2  (DEC) Date: 1995/11/21 19:34:19
  */
 
 

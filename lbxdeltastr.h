@@ -88,4 +88,18 @@ typedef struct {
 } lbxMotionDeltaEvent;
 #define sz_lbxMotionDeltaEvent 8
 
+extern int LBXInitDeltaCache ( LBXDeltasPtr pcache, int nDeltas, 
+			       int maxDeltasize );
+extern void LBXFreeDeltaCache ( LBXDeltasPtr pcache );
+extern int LBXDeltaMinDiffs ( LBXDeltasPtr pcache, unsigned char *inmsg, 
+			      int inmsglen, int maxdiff, int *pindex );
+extern void LBXEncodeDelta ( LBXDeltasPtr pcache, unsigned char *inmsg, 
+			     int ndiff, int index, unsigned char *buf );
+extern int LBXDecodeDelta ( LBXDeltasPtr pcache, xLbxDiffItem *deltas, 
+			    int ndiff, int index, unsigned char **buf );
+extern void LBXAddDeltaOut ( LBXDeltasPtr pcache, unsigned char *inmsg, 
+			     int inmsglen );
+extern void LBXAddDeltaIn ( LBXDeltasPtr pcache, unsigned char *inmsg, 
+			    int inmsglen );
+
 #endif /* LBX_DELTA_STRUCT_H */

@@ -20,6 +20,7 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  */
+/* $XFree86: xc/include/extensions/XLbx.h,v 1.3 2002/10/16 01:59:55 dawes Exp $ */
  
 #ifndef _XLBX_H_
 #define _XLBX_H_
@@ -127,7 +128,19 @@
 
 #ifndef _XLBX_SERVER_
 
+#include <X11/Xdefs.h>
+#include <X11/Xlib.h>
+
 _XFUNCPROTOBEGIN
+
+Bool XLbxQueryExtension(
+#if NeedFunctionPrototypes
+    Display*		/* dpy */,
+    int*		/* requestp */,
+    int*		/* event_basep */,
+    int*		/* error_basep */
+#endif
+);
 
 Bool XLbxQueryVersion(
 #if NeedFunctionPrototypes
@@ -136,6 +149,8 @@ Bool XLbxQueryVersion(
     int*		/* minorVersion */
 #endif
 );
+
+int XLbxGetEventBase(Display *dpy);
 
 _XFUNCPROTOEND
 

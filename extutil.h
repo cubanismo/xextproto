@@ -31,9 +31,12 @@ in this Software without prior written authorization from The Open Group.
  * protocol extensions.  THESE INTERFACES ARE NOT PART OF THE X STANDARD AND
  * ARE SUBJECT TO CHANGE!
  */
+/* $XFree86: xc/include/extensions/extutil.h,v 1.9 2001/12/14 19:53:28 dawes Exp $ */
 
 #ifndef _EXTUTIL_H_
 #define _EXTUTIL_H_
+
+#include <X11/extensions/Xext.h>
 
 /*
  * We need to keep a list of open displays since the Xlib display list isn't
@@ -182,8 +185,7 @@ extern XExtDisplayInfo *XextFindDisplay(
  * something that is called many, many times would be bad.
  */
 #define XEXT_GENERATE_FIND_DISPLAY(proc,extinfo,extname,hooks,nev,data) \
-XExtDisplayInfo *proc (dpy) \
-    register Display *dpy; \
+XExtDisplayInfo *proc (Display *dpy) \
 { \
     XExtDisplayInfo *dpyinfo; \
     if (!extinfo) { if (!(extinfo = XextCreateExtension())) return NULL; } \
@@ -192,21 +194,20 @@ XExtDisplayInfo *proc (dpy) \
     return dpyinfo; \
 }
 
+#define XEXT_FIND_DISPLAY_PROTO(proc) \
+	XExtDisplayInfo *proc(Display *dpy)
+
 #define XEXT_GENERATE_CLOSE_DISPLAY(proc,extinfo) \
-int proc (dpy, codes) \
-    Display *dpy; \
-    XExtCodes *codes; \
+int proc (Display *dpy, XExtCodes *codes) \
 { \
     return XextRemoveDisplay (extinfo, dpy); \
 }
 
+#define XEXT_CLOSE_DISPLAY_PROTO(proc) \
+	int proc(Display *dpy, XExtCodes *codes)
+
 #define XEXT_GENERATE_ERROR_STRING(proc,extname,nerr,errl) \
-char *proc (dpy, code, codes, buf, n) \
-    Display  *dpy; \
-    int code; \
-    XExtCodes *codes; \
-    char *buf; \
-    int n; \
+char *proc (Display *dpy, int code, XExtCodes *codes, char *buf, int n) \
 {  \
     code -= codes->first_error;  \
     if (code >= 0 && code < nerr) { \
@@ -218,4 +219,6 @@ char *proc (dpy, code, codes, buf, n) \
     return (char *)0; \
 }
 
+#define XEXT_ERROR_STRING_PROTO(proc) \
+	char *proc(Display *dpy, int code, XExtCodes *codes, char *buf, int n)
 #endif

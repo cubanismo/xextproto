@@ -20,11 +20,12 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  */
+/* $XFree86: xc/include/extensions/lbxstr.h,v 1.3 2001/11/23 19:21:30 dawes Exp $ */
  
 #ifndef _LBXSTR_H_
 #define _LBXSTR_H_
 
-#include "XLbx.h"
+#include <X11/extensions/XLbx.h>
 
 #define LBXNAME "LBX"
 
@@ -37,7 +38,6 @@
  * data as 32-bit quantities and another entity viewing the same data as 64-bit
  * quantities.
  */
-
 #define XID CARD32
 #define Atom CARD32
 #define Colormap CARD32

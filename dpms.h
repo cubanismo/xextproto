@@ -26,12 +26,13 @@ dealings in this Software without prior written authorization from Digital
 Equipment Corporation.
 
 ******************************************************************/
+/* $XFree86: xc/include/extensions/dpms.h,v 3.5 2001/01/17 17:53:20 dawes Exp $ */
 
 /*
  * HISTORY
  */
 /*
- * @(#)$RCSfile$ $Revision$ (DEC) $Date$
+ * @(#)RCSfile: dpms.h,v Revision: 1.1.4.2  (DEC) Date: 1995/11/21 19:34:17
  */
 
 
@@ -40,5 +41,20 @@ Equipment Corporation.
 #define DPMSModeSuspend	2
 #define DPMSModeOff	3
 
+#ifndef DPMS_SERVER
+
+#include <X11/X.h>
+#include <X11/Xmd.h>
+
+extern Bool DPMSQueryExtension(Display *, int *, int *);
+extern Status DPMSGetVersion(Display *, int *, int *);
+extern Bool DPMSCapable(Display *);
+extern Status DPMSSetTimeouts(Display *, CARD16, CARD16, CARD16);
+extern Bool DPMSGetTimeouts(Display *, CARD16 *, CARD16 *, CARD16 *);
+extern Status DPMSEnable(Display *);
+extern Status DPMSDisable(Display *);
+extern Status DPMSForceLevel(Display *, CARD16);
+extern Status DPMSInfo(Display *, CARD16 *, BOOL *);
+#endif
 
 

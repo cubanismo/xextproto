@@ -24,11 +24,12 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization
 from The Open Group.
 */
+/* $XFree86: xc/include/extensions/securstr.h,v 1.3 2001/12/14 19:53:29 dawes Exp $ */
 
 #ifndef _SECURSTR_H
 #define _SECURSTR_H
 
-#include "security.h"
+#include <X11/extensions/security.h>
 
 #define SECURITY_EXTENSION_NAME		"SECURITY"
 #define SECURITY_MAJOR_VERSION		1
