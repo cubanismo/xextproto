@@ -38,6 +38,6 @@ xext_HEADERS = \
 	xteststr.h
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = xextensions.pc
+pkgconfig_DATA = xextproto.pc
 
-EXTRA_DIST = autogen.sh xextensions.pc.in
+EXTRA_DIST = autogen.sh xextproto.pc.in
