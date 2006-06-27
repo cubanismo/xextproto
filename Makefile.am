@@ -22,7 +22,6 @@ xext_HEADERS = \
 	sync.h \
 	syncstr.h \
 	Xag.h \
-	Xagsrv.h \
 	Xagstr.h \
 	Xcup.h \
 	Xcupstr.h \
