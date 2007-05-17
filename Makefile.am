@@ -3,6 +3,9 @@ xext_HEADERS = \
 	dpms.h \
 	dpmsstr.h \
 	extutil.h \
+        ge.h \
+        geproto.h \
+        Xge.h \
 	lbxbuf.h \
 	lbxbufstr.h \
 	lbxdeltastr.h \
