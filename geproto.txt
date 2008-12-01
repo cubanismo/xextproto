@@ -1,102 +1,83 @@
                         X Generic Event Extension
                               Peter Hutterer
-                          peter@cs.unisa.edu.au
+                          peter.hutterer@who-t.net
 
 
 1. Introduction
-2. Requests
-3. Events
-4. Usage from other extensions - server side
-5. Usage from other extensions - client side
-6. Notes
+2. Extension Initialization
+3. Extension Events
+4. Notes
 
 _____________________________________________________________________________
 1. Introduction
 
-X was designed to provide 64 event opcodes for all extensions. With the
-increasing number of extensions, event opcodes are running out and future
-extensions will not be able to send events to the client.
+X was designed to provide 64 event opcodes for all extensions. These events
+are limited to 32 bytes.
 
-The Generic Event Extension is a template for future extensions to re-use a
-single opcode. GE does not actually do much but provide headers and a few API
-calls. The majority of the work is still to be done in the extensions.
+The Generic Event Extension provides a template event for extensions to re-use
+a single event opcode. GE only provide headers and the most basic
+functionality, leaving the extensions to interpret the events in their
+specific context.
 
-Standard X events are limited to 32 bytes. GenericEvents have the same size
-restrictions as requests, with a minimum of 32 bytes, followed by an arbitrary
-amount of data specified in the length field (see Section 3.)
-
+GenericEvents may be longer than 32 bytes. If so, the number of 4 byte units
+following the initial 32 bytes must be specified in the length field of the
+event.
 _____________________________________________________________________________
-2. Requests
+2. Extension Initialization
 
-GEQueryVersion:
-        CARD8   reqType
-        CARD8   ReqType         X_GEQueryVersion
-        CARD16  length
-        CARD32  majorVersion
-        CARD32  minorVersion
+The name of this extension is "Generic Event Extension"
 
-GEQueryVersion reply:
-        CARD8   repType
-        CARD8   RepType         X_GEQueryVersion
-        CARD16  sequenceNumber
-        CARD32  length
-        CARD16  major_version
-        CARD16  minor_version
+┌───
+    GEQueryVersion
+	client-major-version:	CARD16
+	client-minor-version:	CARD16
+      ▶
+	major-version:		CARD16
+	minor-version:		CARD16
+└───
+
+	The client sends the highest supported version to the server
+	and the server sends the highest version it supports, but no
+	higher than the requested version. Major versions changes can
+	introduce incompatibilities in existing functionality, minor
+	version changes introduce only backward compatible changes.
+	It is the clients responsibility to ensure that the server
+	supports a version which is compatible with its expectations.
+
+
+        As of version 1.0, no other requests are provided by this extension.
 _____________________________________________________________________________
-3. Events
+3. Extension Events
 
 GE defines a single event, to be used by all extensions. The event's structure 
-is similar to a request.
+is similar to a reply.
 
-GenericEvent
-    BYTE    type
-    CARD8   extension
-    CARD16  sequenceNumber
-    CARD32  length;
-    CARD16  evtype;
-    CARD16  pad1;
-    CARD32  pad2;
-    CARD32  pad3;
-    CARD32  pad4;
-    CARD32  pad5;
-    CARD32  pad6;
+┌───
+    GenericEvent
+	type: BYTE;			always GenericEvent
+	extension: CARD8;		extension offset
+	sequenceNumber: CARD16		low 16 bits of request seq. number
+	length: CARD32			length
+	evtype: CARD16			event type
+└───
 
-The field 'extension' is to be set to the major opcode of the extension.
-The 'evtype' field is the actual opcode of the event. 
-This event is to be type-cast by an extension to it's real format.
-The length field specifies the number of 4-byte blocks after the initial 32
-bytes.
-
+	The field 'extension' is to be set to the major opcode of the
+	extension. The 'evtype' field is the actual opcode of the event. 
+	The length field specifies the number of 4-byte blocks after the
+	initial 32 bytes. If length is 0, the event is 32 bytes long.
 _____________________________________________________________________________
-4. Usage from other extensions - server side
-
-GERegisterExtension(major_opcode, swap)
-    An extension needs to register at the GE. This should be done after
-    calling AddExtension(). 
-    major_opcode is the major opcode for all extension requests.
-    The swap function will be called when an event has to be converted for a
-    client with different byte ordering.
-
-_____________________________________________________________________________
-5. Usage from other extensions - client side
-
-None. The event conversion rules of the extension however should be able to
-handle events of type GenericEvent as well.
-
-Internally, when an extension is initialized, it needs to call XExtAddDisplay
-and provide a set of hooks that are to be called for events conversion and
-other stuff. XGE hooks into XExtAddDisplay and stores the hooks provided by
-the extension. Should a GenericEvent come along, XGE receives it but relays
-the call to the real extension to handle it. 
-
-_____________________________________________________________________________
-6. Notes
+4. Notes
 
 Although the wire event is of arbitrary length, the actual size of an XEvent
 is restricted to sizeof(XEvent) [96 bytes, see Xlib.h]. If an extension
 converts a wire event to an XEvent > 96 bytes, it will overwrite the space
-acllocated for the event. See struct _XSQEvent in Xlibint.h for details.
+allocated for the event. See struct _XSQEvent in Xlibint.h for details.
 
 Extensions need to malloc additional data and fill the XEvent structure with
 pointers to the malloc'd data. The client then needs to free the data, only
 the XEvent structure will be released by Xlib.
+
+The server must not send GenericEvents longer than 32 bytes until it has
+verified that the client is able to interpret these events. If a long event is
+sent to a client unable to process GenericEvents, future interpretation of
+replies and events by this client will fail.
