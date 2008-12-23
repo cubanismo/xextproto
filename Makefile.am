@@ -42,7 +42,7 @@ xext_HEADERS = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xextproto.pc
 
-EXTRA_DIST = autogen.sh xextproto.pc.in
+EXTRA_DIST = autogen.sh xextproto.pc.in geproto.txt
 
 EXTRA_DIST += ChangeLog
 MAINTAINERCLEANFILES = ChangeLog
