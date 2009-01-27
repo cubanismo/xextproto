@@ -9,3 +9,6 @@ install-sh
 missing
 xextproto.pc
 *~
+xextproto-*.tar.*
+ChangeLog
+tags
