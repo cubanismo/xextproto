@@ -10,8 +10,8 @@ xext_HEADERS = \
 	mitmiscproto.h \
 	multibufconst.h \
 	multibufproto.h \
-	security.h \
-	securstr.h \
+	secur.h \
+	securproto.h \
 	shape.h \
 	shapestr.h \
 	shm.h \

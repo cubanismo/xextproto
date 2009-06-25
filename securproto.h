@@ -26,14 +26,10 @@ from The Open Group.
 */
 /* $XFree86: xc/include/extensions/securstr.h,v 1.2 2001/08/01 00:44:35 tsi Exp $ */
 
-#ifndef _SECURSTR_H
-#define _SECURSTR_H
+#ifndef _SECURPROTO_H
+#define _SECURPROTO_H
 
-#include <X11/extensions/security.h>
-
-#define SECURITY_EXTENSION_NAME		"SECURITY"
-#define SECURITY_MAJOR_VERSION		1
-#define SECURITY_MINOR_VERSION		0
+#include <X11/extensions/secur.h>
 
 #define X_SecurityQueryVersion		0
 #define X_SecurityGenerateAuthorization 1
@@ -69,7 +65,7 @@ typedef struct {
     CARD16      length B16;
     CARD16	nbytesAuthProto B16;
     CARD16	nbytesAuthData B16;
-    CARD32	valueMask B32; 
+    CARD32	valueMask B32;
     /* auth protocol name padded to 4 bytes */
     /* auth protocol data padded to 4 bytes */
     /* list of CARD32 values, if any */
@@ -113,4 +109,4 @@ typedef struct _xSecurityAuthorizationRevokedEvent {
 } xSecurityAuthorizationRevokedEvent;
 #define sz_xSecurityAuthorizationRevokedEvent 32
 
-#endif /* _SECURSTR_H */
+#endif /* _SECURPROTO_H */
