@@ -5,7 +5,6 @@ xext_HEADERS = \
 	extutil.h \
         ge.h \
         geproto.h \
-        Xge.h \
 	lbx.h \
 	lbxproto.h \
 	mitmisc.h \
@@ -28,7 +27,6 @@ xext_HEADERS = \
 	dbeproto.h \
 	EVI.h \
 	EVIproto.h \
-	Xext.h \
 	xtestext1.h \
 	xtest.h \
 	xtestproto.h
