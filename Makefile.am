@@ -12,8 +12,8 @@ xext_HEADERS = \
 	multibufproto.h \
 	secur.h \
 	securproto.h \
-	shape.h \
-	shapestr.h \
+	shapeconst.h \
+	shapeproto.h \
 	shm.h \
 	shmproto.h \
 	sync.h \

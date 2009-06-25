@@ -26,23 +26,28 @@ in this Software without prior written authorization from The Open Group.
 
 /* $Xorg: shapestr.h,v 1.4 2001/02/09 02:03:24 xorgcvs Exp $ */
 
-#ifndef _SHAPESTR_H_
-#define _SHAPESTR_H_
+#ifndef _SHAPEPROTO_H_
+#define _SHAPEPROTO_H_
+
+#include <X11/extensions/shapeconst.h>
 
 /*
  * Protocol requests constants and alignment values
  * These would really be in SHAPE's X.h and Xproto.h equivalents
  */
 
-#include "shape.h"
-
 #define Window CARD32
 #define Time CARD32
 
-#define SHAPENAME "SHAPE"
-
-#define SHAPE_MAJOR_VERSION	1	/* current version numbers */
-#define SHAPE_MINOR_VERSION	1
+#define X_ShapeQueryVersion		0
+#define X_ShapeRectangles		1
+#define X_ShapeMask			2
+#define X_ShapeCombine			3
+#define X_ShapeOffset			4
+#define X_ShapeQueryExtents		5
+#define X_ShapeSelectInput		6
+#define X_ShapeInputSelected		7
+#define X_ShapeGetRectangles		8
 
 typedef struct _ShapeQueryVersion {
 	CARD8	reqType;		/* always ShapeReqCode */
@@ -95,7 +100,7 @@ typedef struct _ShapeMask {
 	CARD32	src B32;	/* 1 bit pixmap */
 } xShapeMaskReq;
 #define sz_xShapeMaskReq	20
-	
+
 typedef struct _ShapeCombine {
 	CARD8	reqType;	/* always ShapeReqCode */
 	CARD8	shapeReqType;	/* always X_ShapeCombine */
@@ -110,7 +115,7 @@ typedef struct _ShapeCombine {
 	Window	src B32;
 } xShapeCombineReq;
 #define sz_xShapeCombineReq	20
-	
+
 typedef struct _ShapeOffset {
 	CARD8	reqType;	/* always ShapeReqCode */
 	CARD8	shapeReqType;	/* always X_ShapeOffset */
@@ -231,4 +236,4 @@ typedef struct {
 #undef Window
 #undef Time
 
-#endif /* _SHAPESTR_H_ */
+#endif /* _SHAPEPROTO_H_ */
