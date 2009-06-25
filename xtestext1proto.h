@@ -42,8 +42,8 @@ documentation, and that the name of Hewlett-Packard not be used in
 advertising or publicity pertaining to distribution of the
 software without specific, written prior permission.
 
-Hewlett-Packard makes no representations about the 
-suitability of this software for any purpose.  It is provided 
+Hewlett-Packard makes no representations about the
+suitability of this software for any purpose.  It is provided
 "as is" without express or implied warranty.
 
 This software is not subject to any license of the American
@@ -52,46 +52,17 @@ University of California.
 
 */
 
+#ifndef _XTESTEXT1PROTO_H
+#define _XTESTEXT1PROTO_H 1
+
+#include <X11/extensions/xtestext1const.h>
+
 /*
  * the typedefs for CARD8, CARD16, and CARD32 are defined in Xmd.h
  */
 
 /*
- * used in the XTestPressButton and XTestPressKey functions
- */
-#define XTestPRESS                      1 << 0
-#define XTestRELEASE                    1 << 1
-#define XTestSTROKE                     1 << 2
-
-/*
- * When doing a key or button stroke, the number of milliseconds
- * to delay between the press and the release of a key or button
- * in the XTestPressButton and XTestPressKey functions.
- */
-
-#define XTestSTROKE_DELAY_TIME		10
-
-/*
- * used in the XTestGetInput function
- */
-#define XTestEXCLUSIVE                  1 << 0
-#define XTestPACKED_ACTIONS             1 << 1
-#define XTestPACKED_MOTION              1 << 2
-
-/*
- * used in the XTestFakeInput function
- */
-#define XTestFAKE_ACK_NOT_NEEDED        0
-#define XTestFAKE_ACK_REQUEST           1
-
-/*
- * used in the XTest extension initialization routine
- */
-#define XTestEXTENSION_NAME             "XTestExtension1"
-#define XTestEVENT_COUNT                2
-
-/*
- * XTest request type values 
+ * XTest request type values
  *
  * used in the XTest extension protocol requests
  */
@@ -107,7 +78,6 @@ University of California.
  * 4 so that the entire xTestFakeInputReq structure size is a
  * multiple of 4.
  */
-#define XTestMAX_ACTION_LIST_SIZE       64
 
 typedef struct {
         CARD8   reqType;        /* always XTestReqCode             */
@@ -171,8 +141,6 @@ typedef struct {
  * more user input actions to report to the client.  It must
  * remain the same size as all other wire events (32 bytes).
  */
-#define XTestACTIONS_SIZE	28
-
 typedef struct {
         CARD8   type;           /* always XTestInputActionType */
         CARD8   pad00;
@@ -200,63 +168,8 @@ typedef struct {
 } xTestFakeAckEvent;
 
 /*
- * The server side of this extension does not (and should not) have
- * definitions for Display and Window.  The ifndef allows the server
- * side of the extension to ignore the following typedefs.
- */
-#ifndef XTestSERVER_SIDE
-/*
- * This is the definition for the input action host format event structure.
- * This is the form that a client using this extension will see when
- * it receives an input action event.
- */
-typedef struct {
-        int     type;           /* always XTestInputActionType */
-	Display *display;
-	Window  window;
-        CARD8   actions[XTestACTIONS_SIZE];
-} XTestInputActionEvent;
-
-/*
- * This is the definition for the xTestFakeAck host format event structure.
- * This is the form that a client using this extension will see when
- * it receives an XTestFakeAck event.
- */
-typedef struct {
-        int     type;           /* always XTestFakeAckType */
-	Display *display;
-	Window  window;
-} XTestFakeAckEvent;
-#endif
-
-/*
- * This is the definition for the format of the header byte
- * in the input action structures.
- */
-#define XTestACTION_TYPE_MASK   0x03    /* bits 0 and 1          */
-#define XTestKEY_STATE_MASK     0x04    /* bit 2 (key action)    */
-#define XTestX_SIGN_BIT_MASK    0x04    /* bit 2 (motion action) */
-#define XTestY_SIGN_BIT_MASK    0x08    /* bit 3 (motion action) */
-#define XTestDEVICE_ID_MASK     0xf0    /* bits 4 through 7      */
-
-#define XTestMAX_DEVICE_ID	0x0f
-#define XTestPackDeviceID(x)	(((x) & XTestMAX_DEVICE_ID) << 4)
-#define XTestUnpackDeviceID(x)	(((x) & XTestDEVICE_ID_MASK) >> 4)
-
-/*
- * These are the possible action types.
- */
-#define XTestDELAY_ACTION       0
-#define XTestKEY_ACTION         1
-#define XTestMOTION_ACTION      2
-#define XTestJUMP_ACTION        3
-
-/*
  * These are the definitions for key/button motion input actions.
  */
-#define XTestKEY_UP             0x04
-#define XTestKEY_DOWN           0x00
-
 typedef struct {
         CARD8   header;         /* which device, key up/down */
         CARD8   keycode;        /* which key/button to move  */
@@ -283,20 +196,6 @@ typedef struct {
  * into one byte to make things fit in 32 bits.  If the relative
  * motion range is larger than +/-15, use the pointer jump action.
  */
-#define XTestMOTION_MAX            15
-#define XTestMOTION_MIN            -15
-
-#define XTestX_NEGATIVE            0x04
-#define XTestY_NEGATIVE            0x08
-
-#define XTestX_MOTION_MASK         0x0f
-#define XTestY_MOTION_MASK         0xf0
-
-#define XTestPackXMotionValue(x)   ((x) & XTestX_MOTION_MASK)
-#define XTestPackYMotionValue(x)   (((x) << 4) & XTestY_MOTION_MASK)
-
-#define XTestUnpackXMotionValue(x) ((x) & XTestX_MOTION_MASK)
-#define XTestUnpackYMotionValue(x) (((x) & XTestY_MOTION_MASK) >> 4)
 
 typedef struct {
         CARD8   header;         /* which pointer             */
@@ -305,7 +204,7 @@ typedef struct {
 } XTestMotionInfo;
 
 /*
- * These are the definitions for a long delay input action.  It is 
+ * These are the definitions for a long delay input action.  It is
  * used when more than XTestSHORT_DELAY_TIME milliseconds of delay
  * (approximately one minute) is needed.
  *
@@ -315,12 +214,11 @@ typedef struct {
  * there are no more input actions in an XTestInputAction event.
  */
 
-#define XTestSHORT_DELAY_TIME	0xffff
-#define XTestDELAY_DEVICE_ID    0x0f   
-
 typedef struct {
         CARD8   header;         /* always XTestDELAY_DEVICE_ID */
         CARD8   pad1;           /* unused padding byte         */
         CARD16  pad2 B16;       /* unused padding word         */
         CARD32  delay_time B32; /* how long to delay (in ms)   */
 } XTestDelayInfo;
+
+#endif /* _XTESTEXT1PROTO_H */

@@ -26,7 +26,8 @@ xext_HEADERS = \
 	dbeproto.h \
 	EVI.h \
 	EVIproto.h \
-	xtestext1.h \
+	xtestext1proto.h \
+	xtestext1const.h \
 	xtest.h \
 	xtestproto.h
 
