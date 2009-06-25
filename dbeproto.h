@@ -1,6 +1,6 @@
 /* $Xorg: Xdbeproto.h,v 1.3 2000/08/18 04:05:45 coskrey Exp $ */
 /******************************************************************************
- * 
+ *
  * Copyright (c) 1994, 1995  Hewlett-Packard Company
  *
  * Permission is hereby granted, free of charge, to any person obtaining
@@ -10,10 +10,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included
  * in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -21,43 +21,20 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
  * THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- * 
+ *
  * Except as contained in this notice, the name of the Hewlett-Packard
  * Company shall not be used in advertising or otherwise to promote the
  * sale, use or other dealings in this Software without prior written
  * authorization from the Hewlett-Packard Company.
- * 
+ *
  *     Header file for Xlib-related DBE
  *
  *****************************************************************************/
 
+#ifndef DBE_PROTO_H
+#define DBE_PROTO_H
 
-#ifndef XDBE_PROTO_H
-#define XDBE_PROTO_H
-
-/* INCLUDES */
-
-
-/* DEFINES */
-
-/* Values for swap_action field of XdbeSwapInfo structure */
-#define XdbeUndefined    0
-#define XdbeBackground   1
-#define XdbeUntouched    2
-#define XdbeCopied       3
-
-#ifdef NEED_DBE_PROTOCOL
-
-#define DBE_PROTOCOL_NAME "DOUBLE-BUFFER"
-
-/* Current version numbers */
-#define DBE_MAJOR_VERSION       1
-#define DBE_MINOR_VERSION       0
-
-/* Used when adding extension; also used in Xdbe macros */
-#define DbeNumberEvents			0
-#define DbeBadBuffer			0
-#define DbeNumberErrors			(DbeBadBuffer + 1)
+#include <X11/extensions/dbe.h>
 
 /* Request values used in (S)ProcDbeDispatch() */
 #define X_DbeGetVersion                 0
@@ -72,36 +49,9 @@
 typedef CARD8  xDbeSwapAction;
 typedef CARD32 xDbeBackBuffer;
 
-#endif /* NEED_DBE_PROTOCOL */
-
-
 /* TYPEDEFS */
 
-/* Client data types */
-
-/* XdbeVisualInfo and XdbeScreenVisualInfo are defined in this file,
- * "Xdbeproto.h", rather than "Xdbe.h" because the server uses these data
- * types.
- */
-
-typedef struct
-{
-    VisualID    visual;    /* one visual ID that supports double-buffering */
-    int         depth;     /* depth of visual in bits                      */
-    int         perflevel; /* performance level of visual                  */
-}
-XdbeVisualInfo;
-
-typedef struct
-{
-    int                 count;          /* number of items in visual_depth   */
-    XdbeVisualInfo      *visinfo;       /* list of visuals & depths for scrn */
-}
-XdbeScreenVisualInfo;
-
 /* Protocol data types */
-
-#ifdef NEED_DBE_PROTOCOL
 
 typedef struct
 {
@@ -271,7 +221,5 @@ typedef struct
 } xDbeGetBackBufferAttributesReply;
 #define sz_xDbeGetBackBufferAttributesReply	32
 
-#endif /* NEED_DBE_PROTOCOL */
-
-#endif /* XDBE_PROTO_H */
+#endif /* DBE_PROTO_H */
 

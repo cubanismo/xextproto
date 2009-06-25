@@ -24,8 +24,8 @@ xext_HEADERS = \
 	agproto.h \
 	cup.h \
 	cupproto.h \
-	Xdbe.h \
-	Xdbeproto.h \
+	dbe.h \
+	dbeproto.h \
 	EVI.h \
 	EVIproto.h \
 	Xext.h \
