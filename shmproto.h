@@ -27,12 +27,10 @@ in this Software without prior written authorization from The Open Group.
 
 /* THIS IS NOT AN X CONSORTIUM STANDARD OR AN X PROJECT TEAM SPECIFICATION */
 
-#ifndef _SHMSTR_H_
-#define _SHMSTR_H_
+#ifndef _SHMPROTO_H_
+#define _SHMPROTO_H_
 
-/* $Xorg: shmstr.h,v 1.4 2001/02/09 02:03:24 xorgcvs Exp $ */
-
-#include "XShm.h"
+#include <X11/extensions/shm.h>
 
 #define ShmSeg CARD32
 #define Drawable CARD32
@@ -40,39 +38,12 @@ in this Software without prior written authorization from The Open Group.
 #define GContext CARD32
 #define Pixmap CARD32
 
-#define SHMNAME "MIT-SHM"
-
-#define SHM_MAJOR_VERSION	1	/* current version numbers */
-#define SHM_MINOR_VERSION	1
-
-#ifdef _XSHM_SERVER_
-#define XSHM_PUT_IMAGE_ARGS \
-    DrawablePtr		/* dst */, \
-    GCPtr		/* pGC */, \
-    int			/* depth */, \
-    unsigned int	/* format */, \
-    int			/* w */, \
-    int			/* h */, \
-    int			/* sx */, \
-    int			/* sy */, \
-    int			/* sw */, \
-    int			/* sh */, \
-    int			/* dx */, \
-    int			/* dy */, \
-    char *		/* data */
-
-#define XSHM_CREATE_PIXMAP_ARGS \
-    ScreenPtr	/* pScreen */, \
-    int		/* width */, \
-    int		/* height */, \
-    int		/* depth */, \
-    char *	/* addr */
-
-typedef struct _ShmFuncs {
-    PixmapPtr	(* CreatePixmap)(XSHM_CREATE_PIXMAP_ARGS);
-    void	(* PutImage)(XSHM_PUT_IMAGE_ARGS);
-} ShmFuncs, *ShmFuncsPtr;
-#endif
+#define X_ShmQueryVersion		0
+#define X_ShmAttach			1
+#define X_ShmDetach			2
+#define X_ShmPutImage			3
+#define X_ShmGetImage			4
+#define X_ShmCreatePixmap		5
 
 typedef struct _ShmQueryVersion {
     CARD8	reqType;		/* always ShmReqCode */
@@ -139,7 +110,7 @@ typedef struct _ShmPutImage {
     CARD8	bpad;
     ShmSeg	shmseg B32;
     CARD32	offset B32;
-} xShmPutImageReq;    
+} xShmPutImageReq;
 #define sz_xShmPutImageReq	40
 
 typedef struct _ShmGetImage {
@@ -158,7 +129,7 @@ typedef struct _ShmGetImage {
     CARD8	pad2;
     ShmSeg	shmseg B32;
     CARD32	offset B32;
-} xShmGetImageReq;    
+} xShmGetImageReq;
 #define sz_xShmGetImageReq	32
 
 typedef struct _ShmGetImageReply {
@@ -214,4 +185,4 @@ typedef struct _ShmCompletion {
 #undef GContext
 #undef Pixmap
 
-#endif /* _SHMSTR_H_ */
+#endif /* _SHMPROTO_H_ */

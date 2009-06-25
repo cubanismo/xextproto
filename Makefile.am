@@ -16,7 +16,8 @@ xext_HEADERS = \
 	securstr.h \
 	shape.h \
 	shapestr.h \
-	shmstr.h \
+	shm.h \
+	shmproto.h \
 	sync.h \
 	syncstr.h \
 	Xag.h \
@@ -28,7 +29,6 @@ xext_HEADERS = \
 	EVI.h \
 	EVIproto.h \
 	Xext.h \
-	XShm.h \
 	xtestext1.h \
 	XTest.h \
 	xteststr.h
