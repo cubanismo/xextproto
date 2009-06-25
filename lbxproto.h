@@ -16,21 +16,70 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NCD.
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  */
 /* $XFree86: xc/include/extensions/lbxstr.h,v 1.2 2001/08/01 00:44:35 tsi Exp $ */
- 
-#ifndef _LBXSTR_H_
-#define _LBXSTR_H_
 
-#include <X11/extensions/XLbx.h>
+#ifndef _LBXPROTO_H_
+#define _LBXPROTO_H_
 
-#define LBXNAME "LBX"
+#include <X11/extensions/lbx.h>
+/*
+ * NOTE:  any changes or additions to the opcodes needs to be reflected
+ * in the lbxCacheable array in Xserver/lbx/lbxmain.c
+ */
 
-#define LBX_MAJOR_VERSION	1
-#define LBX_MINOR_VERSION	0
+#define X_LbxQueryVersion		0
+#define X_LbxStartProxy			1
+#define X_LbxStopProxy			2
+#define X_LbxSwitch			3
+#define X_LbxNewClient			4
+#define X_LbxCloseClient		5
+#define X_LbxModifySequence		6
+#define X_LbxAllowMotion		7
+#define X_LbxIncrementPixel		8
+#define X_LbxDelta			9
+#define	X_LbxGetModifierMapping		10
+#define	X_LbxInvalidateTag		12
+#define X_LbxPolyPoint			13
+#define X_LbxPolyLine			14
+#define X_LbxPolySegment		15
+#define X_LbxPolyRectangle		16
+#define X_LbxPolyArc			17
+#define X_LbxFillPoly			18
+#define X_LbxPolyFillRectangle		19
+#define X_LbxPolyFillArc		20
+#define	X_LbxGetKeyboardMapping		21
+#define	X_LbxQueryFont			22
+#define	X_LbxChangeProperty		23
+#define	X_LbxGetProperty		24
+#define	X_LbxTagData			25
+
+#define X_LbxCopyArea			26
+#define X_LbxCopyPlane			27
+#define X_LbxPolyText8			28
+#define X_LbxPolyText16			29
+#define X_LbxImageText8			30
+#define X_LbxImageText16		31
+
+#define X_LbxQueryExtension		32
+#define X_LbxPutImage			33
+#define X_LbxGetImage			34
+
+#define X_LbxBeginLargeRequest		35
+#define X_LbxLargeRequestData		36
+#define X_LbxEndLargeRequest		37
+
+#define X_LbxInternAtoms		38
+#define X_LbxGetWinAttrAndGeom		39
+
+#define X_LbxGrabCmap			40
+#define X_LbxReleaseCmap		41
+#define X_LbxAllocColor			42
+
+#define X_LbxSync			43
 
 /*
  * Redefine some basic types used by structures defined herein.  This removes
@@ -121,7 +170,7 @@ typedef struct _LbxModifySequence {
     CARD32	adjust B32;
 } xLbxModifySequenceReq;
 #define sz_xLbxModifySequenceReq    8
-    
+
 typedef struct _LbxAllowMotion {
     CARD8	reqType;	/* always LbxReqCode */
     CARD8	lbxReqType;	/* always X_LbxAllowMotion */
@@ -129,13 +178,13 @@ typedef struct _LbxAllowMotion {
     CARD32	num B32;
 } xLbxAllowMotionReq;
 #define sz_xLbxAllowMotionReq    8
-    
+
 typedef struct {
     CARD8	reqType;	/* always LbxReqCode */
     CARD8	lbxReqType;	/* always X_LbxGrabCmap */
     CARD16	length B16;
     Colormap	cmap B32;
-} xLbxGrabCmapReq;    
+} xLbxGrabCmapReq;
 #define sz_xLbxGrabCmapReq	8
 
 #define LBX_SMART_GRAB		0x80
@@ -172,7 +221,7 @@ typedef struct {
     CARD8	lbxReqType;	/* always X_LbxReleaseCmap */
     CARD16	length B16;
     Colormap	cmap B32;
-} xLbxReleaseCmapReq;    
+} xLbxReleaseCmapReq;
 #define sz_xLbxReleaseCmapReq	8
 
 typedef struct {
@@ -183,7 +232,7 @@ typedef struct {
     CARD32	pixel B32;
     CARD16	red B16, green B16, blue B16;
     CARD16	pad B16;
-} xLbxAllocColorReq;    
+} xLbxAllocColorReq;
 #define sz_xLbxAllocColorReq	20
 
 typedef struct _LbxIncrementPixel {
@@ -264,7 +313,7 @@ typedef struct _LbxInternAtoms {
     CARD16	length B16;
     CARD16	num B16;
 } xLbxInternAtomsReq;
-#define sz_xLbxInternAtomsReq	6  
+#define sz_xLbxInternAtomsReq	6
 
 typedef struct {
     BYTE	type;		/* X_Reply */
@@ -371,16 +420,16 @@ typedef struct {
     CARD32	metrics B32;
 } xLbxCharInfo;
 
-/* note that this is identical to xQueryFontReply except for missing 
+/* note that this is identical to xQueryFontReply except for missing
  * first 2 words
  */
 typedef struct {
-    xCharInfo minBounds; 
+    xCharInfo minBounds;
 /* XXX do we need to leave this gunk? */
 #ifndef WORD64
     CARD32 walign1 B32;
 #endif
-    xCharInfo maxBounds; 
+    xCharInfo maxBounds;
 #ifndef WORD64
     CARD32 walign2 B32;
 #endif
@@ -510,7 +559,7 @@ typedef struct {
     CARD8	format;
     CARD8	pad1;
     CARD16	pad2 B16;
-} xLbxGetImageReq;    
+} xLbxGetImageReq;
 
 #define sz_xLbxGetImageReq 24
 
@@ -530,7 +579,7 @@ typedef struct {
 } xLbxGetImageReply;
 
 #define sz_xLbxGetImageReply 32
-  
+
 /* Following used for LbxPolyPoint, LbxPolyLine, LbxPolySegment,
    LbxPolyRectangle, LbxPolyArc, LbxPolyFillRectangle and LbxPolyFillArc */
 
@@ -584,7 +633,7 @@ typedef struct _LbxCopyArea {
     CARD8	cacheEnts;	/* dest drawable and gc */
     /* followed by encoded src x, src y, dst x, dst y, width, height */
 } xLbxCopyAreaReq;
-    
+
 #define sz_xLbxCopyAreaReq  6
 
 typedef struct _LbxCopyPlane {
@@ -596,7 +645,7 @@ typedef struct _LbxCopyPlane {
     CARD8	cacheEnts;	/* dest drawable and gc */
     /* followed by encoded src x, src y, dst x, dst y, width, height */
 } xLbxCopyPlaneReq;
-    
+
 #define sz_xLbxCopyPlaneReq  10
 
 typedef struct _LbxPolyText {
@@ -611,7 +660,7 @@ typedef struct _LbxPolyText {
 
 typedef xLbxPolyTextReq xLbxPolyText8Req;
 typedef xLbxPolyTextReq xLbxPolyText16Req;
-    
+
 #define sz_xLbxPolyTextReq	5
 #define sz_xLbxPolyText8Req	5
 #define sz_xLbxPolyText16Req	5
@@ -624,10 +673,10 @@ typedef struct _LbxImageText {
     CARD8	nChars;
     /* followed by encoded src x, src y coordinates and string */
 } xLbxImageTextReq;
-    
+
 typedef xLbxImageTextReq xLbxImageText8Req;
 typedef xLbxImageTextReq xLbxImageText16Req;
-    
+
 #define sz_xLbxImageTextReq	6
 #define sz_xLbxImageText8Req	6
 #define sz_xLbxImageText16Req	6
@@ -932,4 +981,4 @@ extern int lbxDebug;
 #undef VisualID
 #undef Window
 
-#endif	/* _LBXSTR_H_ */
+#endif	/* _LBXPROTO_H_ */
