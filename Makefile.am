@@ -8,8 +8,8 @@ xext_HEADERS = \
 	lbxproto.h \
 	mitmisc.h \
 	mitmiscproto.h \
-	multibuf.h \
-	multibufst.h \
+	multibufconst.h \
+	multibufproto.h \
 	security.h \
 	securstr.h \
 	shape.h \
