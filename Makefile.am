@@ -7,8 +7,8 @@ xext_HEADERS = \
         geproto.h \
         Xge.h \
 	lbxstr.h \
-	MITMisc.h \
-	mitmiscstr.h \
+	mitmisc.h \
+	mitmiscproto.h \
 	multibuf.h \
 	multibufst.h \
 	security.h \
