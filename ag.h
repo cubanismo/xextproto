@@ -26,18 +26,18 @@ from The Open Group.
 */
 /* $Xorg: Xag.h,v 1.5 2001/02/09 02:03:24 xorgcvs Exp $ */
 
-#ifndef _XAG_H_
-#define _XAG_H_
+#ifndef _AG_H_
+#define _AG_H_
 
-#include <X11/Xfuncproto.h>
+#define XAGNAME "XC-APPGROUP"
 
-#define X_XagQueryVersion		0
-#define X_XagCreate			1
-#define X_XagDestroy			2
-#define X_XagGetAttr			3
-#define X_XagQuery			4
-#define X_XagCreateAssoc		5
-#define X_XagDestroyAssoc		6
+#define XAG_MAJOR_VERSION	1	/* current version numbers */
+#define XAG_MINOR_VERSION	0
+
+#define XagWindowTypeX11	0
+#define XagWindowTypeMacintosh	1
+#define XagWindowTypeWin32	2
+#define XagWindowTypeWin16	3
 
 #define XagBadAppGroup			0
 #define XagNumberErrors			(XagBadAppGroup + 1)
@@ -50,65 +50,5 @@ from The Open Group.
 #define XagNwhitePixel			5
 #define XagNappGroupLeader		6
 
-#ifndef _XAG_SERVER_
-
-#include <stdarg.h>
-
-_XFUNCPROTOBEGIN
-
-typedef XID XAppGroup;
-
-Bool XagQueryVersion(
-    Display*			/* dpy */,
-    int*			/* major_version */,
-    int*			/* minor_version */
-);
-
-Status XagCreateEmbeddedApplicationGroup(
-    Display*			/* dpy */,
-    VisualID			/* root_visual */,
-    Colormap			/* default_colormap */,
-    unsigned long		/* black_pixel */,
-    unsigned long		/* white_pixel */,
-    XAppGroup*			/* app_group_return */
-);
-
-Status XagCreateNonembeddedApplicationGroup(
-    Display*			/* dpy */,
-    XAppGroup*			/* app_group_return */
-);
-
-Status XagDestroyApplicationGroup(
-    Display*			/* dpy */,
-    XAppGroup			/* app_group */
-);
-
-Status XagGetApplicationGroupAttributes(
-    Display*			/* dpy */,
-    XAppGroup			/* app_group */,
-    ...
-);
-
-Status XagQueryApplicationGroup(
-    Display*			/* dpy */,
-    XID				/* resource_base */,
-    XAppGroup*			/* app_group_ret */
-);
-
-Status XagCreateAssociation(
-    Display*			/* dpy */,
-    Window*			/* window_ret */,
-    void*			/* system_window */
-);
-
-Status XagDestroyAssociation(
-    Display*			/* dpy */,
-    Window			/* window */
-);
-
-_XFUNCPROTOEND
-
-#endif /* _XAG_SERVER_ */
-
-#endif /* _XAG_H_ */
+#endif /* _AG_H_ */
 

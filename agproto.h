@@ -26,22 +26,20 @@ from The Open Group.
 */
 /* $Xorg: Xagstr.h,v 1.6 2001/02/09 02:03:24 xorgcvs Exp $ */
 
-#ifndef _XAGSTR_H_ /* { */
-#define _XAGSTR_H_
+#ifndef _AGPROTO_H_ /* { */
+#define _AGPROTO_H_
 
-#include <X11/extensions/Xag.h>
+#include <X11/extensions/ag.h>
+
+#define X_XagQueryVersion		0
+#define X_XagCreate			1
+#define X_XagDestroy			2
+#define X_XagGetAttr			3
+#define X_XagQuery			4
+#define X_XagCreateAssoc		5
+#define X_XagDestroyAssoc		6
 
 #define XAppGroup CARD32
-
-#define XAGNAME "XC-APPGROUP"
-
-#define XAG_MAJOR_VERSION	1	/* current version numbers */
-#define XAG_MINOR_VERSION	0
-
-#define XagWindowTypeX11	0
-#define XagWindowTypeMacintosh	1
-#define XagWindowTypeWin32	2
-#define XagWindowTypeWin16	3
 
 /*
 * Redefine some basic types used by structures defined herein.  This allows
@@ -49,11 +47,11 @@ from The Open Group.
 * thus preventing problems on 64-bit architectures where libXext sees this
 * data as 64 bits and the server sees it as 32 bits.
 */
- 
+
 #define Colormap CARD32
 #define VisualID CARD32
 #define Window CARD32
- 
+
 typedef struct _XagQueryVersion {
     CARD8	reqType;	/* always XagReqCode */
     CARD8	xagReqType;	/* always X_XagQueryVersion */
@@ -178,5 +176,5 @@ typedef struct _XagDestroyAssoc {
 #undef Colormap
 #undef VisualID
 
-#endif /* } _XAGSTR_H_ */
+#endif /* } _AGPROTO_H_ */
 

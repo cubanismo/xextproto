@@ -20,8 +20,8 @@ xext_HEADERS = \
 	shmproto.h \
 	sync.h \
 	syncstr.h \
-	Xag.h \
-	Xagstr.h \
+	ag.h \
+	agproto.h \
 	Xcup.h \
 	Xcupstr.h \
 	Xdbe.h \
