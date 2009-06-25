@@ -2,7 +2,6 @@ xextdir = $(includedir)/X11/extensions
 xext_HEADERS = \
 	dpmsconst.h \
 	dpmsproto.h \
-	extutil.h \
         ge.h \
         geproto.h \
 	lbx.h \
