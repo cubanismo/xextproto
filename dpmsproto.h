@@ -15,14 +15,14 @@ all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY CLAIM, DAMAGES, INCLUDING, 
-BUT NOT LIMITED TO CONSEQUENTIAL OR INCIDENTAL DAMAGES, OR OTHER LIABILITY, 
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY CLAIM, DAMAGES, INCLUDING,
+BUT NOT LIMITED TO CONSEQUENTIAL OR INCIDENTAL DAMAGES, OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Except as contained in this notice, the name of Digital Equipment Corporation 
+Except as contained in this notice, the name of Digital Equipment Corporation
 shall not be used in advertising or otherwise to promote the sale, use or other
-dealings in this Software without prior written authorization from Digital 
+dealings in this Software without prior written authorization from Digital
 Equipment Corporation.
 
 ******************************************************************/
@@ -35,8 +35,10 @@ Equipment Corporation.
  * @(#)RCSfile: dpmsstr.h,v Revision: 1.1.4.2  (DEC) Date: 1995/11/21 19:34:19
  */
 
-#ifndef _DPMSSTR_H_
-#define _DPMSSTR_H_
+#ifndef _DPMSPROTO_H_
+#define _DPMSPROTO_H_
+
+#include <X11/extensions/dpmsconst.h>
 
 #define X_DPMSGetVersion	0
 #define X_DPMSCapable		1
@@ -51,10 +53,6 @@ Equipment Corporation.
 
 #define DPMSNumberErrors	0
 
-#define DPMSMajorVersion	1
-#define DPMSMinorVersion	1
-
-#define DPMSExtensionName	"DPMS"
 
 typedef struct {
     CARD8	reqType;	/* always DPMSCode */
@@ -183,4 +181,4 @@ typedef struct {
 } xDPMSInfoReply;
 #define sz_xDPMSInfoReply 32
 
-#endif /* _DPMSSTR_H_ */
+#endif /* _DPMSPROTO_H_ */
