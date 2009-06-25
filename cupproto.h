@@ -27,15 +27,14 @@ in this Software without prior written authorization from The Open Group.
 */
 /* $XFree86: xc/include/extensions/Xcupstr.h,v 3.5 2001/08/01 00:44:35 tsi Exp $ */
 
-#ifndef _XCUPSTR_H_ /* { */
-#define _XCUPSTR_H_
+#ifndef _XCUPPROTO_H_ /* { */
+#define _XCUPPROTO_H_
 
-#include <X11/extensions/Xcup.h>
+#include <X11/extensions/cup.h>
 
-#define XCUPNAME "TOG-CUP"
-
-#define XCUP_MAJOR_VERSION	1	/* current version numbers */
-#define XCUP_MINOR_VERSION	0
+#define X_XcupQueryVersion			0
+#define X_XcupGetReservedColormapEntries	1
+#define X_XcupStoreColors			2
 
 typedef struct _XcupQueryVersion {
     CARD8	reqType;	/* always XcupReqCode */
@@ -105,5 +104,5 @@ typedef struct {
 } xXcupStoreColorsReply;
 #define sz_xXcupStoreColorsReply	32
 
-#endif /* } _XCUPSTR_H_ */
+#endif /* } _XCUPPROTO_H_ */
 

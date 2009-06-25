@@ -26,44 +26,15 @@ in this Software without prior written authorization from The Open Group.
 */
 /* $XFree86$ */
 
-#ifndef _XCUP_H_
-#define _XCUP_H_
+#ifndef _CUP_H_
+#define _CUP_H_
 
-#include <X11/Xfuncproto.h>
+#define XCUPNAME "TOG-CUP"
 
-#define X_XcupQueryVersion			0
-#define X_XcupGetReservedColormapEntries	1
-#define X_XcupStoreColors			2
+#define XCUP_MAJOR_VERSION	1	/* current version numbers */
+#define XCUP_MINOR_VERSION	0
 
 #define XcupNumberErrors			0
 
-#ifndef _XCUP_SERVER_
-
-_XFUNCPROTOBEGIN
-
-Bool XcupQueryVersion(
-    Display*			/* dpy */,
-    int*			/* major_version */,
-    int*			/* minor_version */
-);
-
-Status XcupGetReservedColormapEntries(
-    Display*			/* dpy */,
-    int				/* screen */,
-    XColor**			/* colors_out */,
-    int*			/* ncolors */
-);
-
-Status XcupStoreColors(
-    Display*			/* dpy */,
-    Colormap			/* colormap */,
-    XColor*			/* colors */,
-    int				/* ncolors */
-);
-
-_XFUNCPROTOEND
-
-#endif /* _XCUP_SERVER_ */
-
-#endif /* _XCUP_H_ */
+#endif /* _CUP_H_ */
 
