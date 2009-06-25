@@ -25,14 +25,19 @@ in this Software without prior written authorization from The Open Group.
 
 */
 
-#ifndef _XTESTSTR_H_
-#define _XTESTSTR_H_
+#ifndef _XTESTPROTO_H_
+#define _XTESTPROTO_H_
+
+#include <X11/extensions/xtest.h>
 
 #define Window CARD32
 #define Time CARD32
 #define Cursor CARD32
 
-#define XTestCurrentCursor ((Cursor)1)
+#define X_XTestGetVersion	0
+#define X_XTestCompareCursor	1
+#define X_XTestFakeInput	2
+#define X_XTestGrabControl	3
 
 typedef struct {
     CARD8	reqType;	/* always XTestReqCode */
@@ -117,4 +122,4 @@ typedef struct {
 #undef Time
 #undef Cursor
 
-#endif /* _XTESTSTR_H_ */
+#endif /* _XTESTPROTO_H_ */
