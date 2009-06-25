@@ -24,8 +24,8 @@ xext_HEADERS = \
 	Xcupstr.h \
 	Xdbe.h \
 	Xdbeproto.h \
-	XEVI.h \
-	XEVIstr.h \
+	EVI.h \
+	EVIproto.h \
 	Xext.h \
 	XLbx.h \
 	XShm.h \

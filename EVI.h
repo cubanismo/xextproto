@@ -23,42 +23,16 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ********************************************************/
 /* $XFree86$ */
 
-#ifndef _XEVI_H_
-#define _XEVI_H_
-#include <X11/Xfuncproto.h>
-#define X_EVIQueryVersion		0
-#define X_EVIGetVisualInfo		1
+#ifndef _EVI_H_
+#define _EVI_H_
+
 #define XEVI_TRANSPARENCY_NONE		0
 #define XEVI_TRANSPARENCY_PIXEL		1
 #define XEVI_TRANSPARENCY_MASK		2
-#ifndef _XEVI_SERVER_
-typedef struct {
-    VisualID		core_visual_id;
-    int			screen;
-    int			level;
-    unsigned int	transparency_type;
-    unsigned int	transparency_value;
-    unsigned int	min_hw_colormaps;
-    unsigned int	max_hw_colormaps;
-    unsigned int	num_colormap_conflicts;
-    VisualID*		colormap_conflicts;
-} ExtendedVisualInfo;
-_XFUNCPROTOBEGIN
-Bool XeviQueryExtension(
-    Display*            /* dpy */
-);
-Status XeviQueryVersion(
-    Display*		/* dpy */,
-    int*		/* majorVersion */,
-    int*		/* minorVersion */
-);
-Status XeviGetVisualInfo(
-    Display*		 	/* dpy */,
-    VisualID*			/* visual_query */,
-    int				/* nVisual_query */,
-    ExtendedVisualInfo**	/* extendedVisualInfo_return */,
-    int*			/* nInfo_return */
-);
-_XFUNCPROTOEND
-#endif
+
+#define EVINAME "Extended-Visual-Information"
+
+#define XEVI_MAJOR_VERSION	1	/* current version numbers */
+#define XEVI_MINOR_VERSION	0
+
 #endif

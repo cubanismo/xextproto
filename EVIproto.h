@@ -23,15 +23,15 @@ THE USE OR PERFORMANCE OF THIS SOFTWARE.
 ********************************************************/
 /* $XFree86$ */
 
-#ifndef _EVISTR_H_
-#define _EVISTR_H_
+#ifndef _EVIPROTO_H_
+#define _EVIPROTO_H_
 
-#include <X11/extensions/XEVI.h>
+#include <X11/extensions/EVI.h>
+
+#define X_EVIQueryVersion		0
+#define X_EVIGetVisualInfo		1
 
 #define VisualID CARD32
-#define EVINAME "Extended-Visual-Information"
-#define XEVI_MAJOR_VERSION	1	/* current version numbers */
-#define XEVI_MINOR_VERSION	0
 
 typedef CARD32 VisualID32;
 #define sz_VisualID32 4
@@ -95,4 +95,4 @@ typedef struct _XEVIGetVisualInfoReply {
 
 #undef VisualID
 
-#endif /* _EVISTR_H_ */
+#endif /* _EVIPROTO_H_ */
