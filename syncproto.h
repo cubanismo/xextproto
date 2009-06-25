@@ -31,13 +31,13 @@ and Olivetti Research Limited, Cambridge, England.
 
                         All Rights Reserved
 
-Permission to use, copy, modify, and distribute this software and its 
-documentation for any purpose and without fee is hereby granted, 
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
 provided that the above copyright notice appear in all copies and that
-both that copyright notice and this permission notice appear in 
+both that copyright notice and this permission notice appear in
 supporting documentation, and that the names of Digital or Olivetti
 not be used in advertising or publicity pertaining to distribution of the
-software without specific, written prior permission.  
+software without specific, written prior permission.
 
 DIGITAL AND OLIVETTI DISCLAIM ALL WARRANTIES WITH REGARD TO THIS
 SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
@@ -50,12 +50,25 @@ PERFORMANCE OF THIS SOFTWARE.
 ******************************************************************/
 /* $XFree86: xc/include/extensions/syncstr.h,v 1.3 2003/07/16 01:38:24 dawes Exp $ */
 
-#ifndef _SYNCSTR_H_
-#define _SYNCSTR_H_
+#ifndef _SYNCPROTO_H_
+#define _SYNCPROTO_H_
 
-#include "sync.h"
+#include <X11/extensions/syncconst.h>
 
-#ifndef _SYNC_OS
+#define X_SyncInitialize		0
+#define X_SyncListSystemCounters	1
+#define X_SyncCreateCounter		2
+#define X_SyncSetCounter		3
+#define X_SyncChangeCounter		4
+#define X_SyncQueryCounter              5
+#define X_SyncDestroyCounter		6
+#define X_SyncAwait			7
+#define X_SyncCreateAlarm               8
+#define X_SyncChangeAlarm	        9
+#define X_SyncQueryAlarm	       10
+#define X_SyncDestroyAlarm	       11
+#define X_SyncSetPriority   	       12
+#define X_SyncGetPriority   	       13
 
 /* cover up types from sync.h to make sure they're the right size for
  * protocol packaging.  These will be undef'ed after all the protocol
@@ -363,132 +376,5 @@ typedef struct _xSyncAlarmNotifyEvent {
 #undef XSyncCounter
 #undef XSyncAlarm
 
-#endif /* _SYNC_OS */
 
-#ifdef _SYNC_SERVER
-
-#define CARD64 XSyncValue /* XXX temporary! need real 64 bit values for Alpha */
-
-typedef struct _SyncCounter {
-    ClientPtr		client;	/* Owning client. 0 for system counters */
-    XSyncCounter	id;		/* resource ID */
-    CARD64		value;		/* counter value */
-    struct _SyncTriggerList *pTriglist;	/* list of triggers */
-    Bool		beingDestroyed; /* in process of going away */
-    struct _SysCounterInfo *pSysCounterInfo; /* NULL if not a system counter */
-} SyncCounter;
-
-/*
- * The System Counter interface
- */
-
-typedef enum {
-    XSyncCounterNeverChanges,
-    XSyncCounterNeverIncreases,
-    XSyncCounterNeverDecreases,
-    XSyncCounterUnrestricted
-} SyncCounterType;
-
-typedef struct _SysCounterInfo {
-    char	*name;
-    CARD64	resolution;
-    CARD64	bracket_greater;
-    CARD64	bracket_less;
-    SyncCounterType counterType;  /* how can this counter change */
-    void        (*QueryValue)(
-			      pointer /*pCounter*/,
-			      CARD64 * /*freshvalue*/
-);
-    void	(*BracketValues)(
-				 pointer /*pCounter*/,
-				 CARD64 * /*lessthan*/,
-				 CARD64 * /*greaterthan*/
-);
-} SysCounterInfo;
-
-
-
-typedef struct _SyncTrigger {
-    SyncCounter *pCounter;
-    CARD64	wait_value;	/* wait value */
-    unsigned int value_type;     /* Absolute or Relative */
-    unsigned int test_type;	/* transition or Comparision type */
-    CARD64	test_value;	/* trigger event threshold value */
-    Bool	(*CheckTrigger)(
-				struct _SyncTrigger * /*pTrigger*/,
-				CARD64 /*newval*/
-				);
-    void	(*TriggerFired)(
-				struct _SyncTrigger * /*pTrigger*/
-				);
-    void	(*CounterDestroyed)(
-				struct _SyncTrigger * /*pTrigger*/
-				    );
-} SyncTrigger;
-
-typedef struct _SyncTriggerList {
-    SyncTrigger *pTrigger;
-    struct _SyncTriggerList *next;
-} SyncTriggerList;
-
-typedef struct _SyncAlarmClientList {
-    ClientPtr	client;
-    XID		delete_id;
-    struct _SyncAlarmClientList *next;
-} SyncAlarmClientList;
-
-typedef struct _SyncAlarm {
-    SyncTrigger trigger;
-    ClientPtr	client;
-    XSyncAlarm 	alarm_id;
-    CARD64	delta;
-    int		events;
-    int		state;
-    SyncAlarmClientList *pEventClients;
-} SyncAlarm;
-
-typedef struct {
-    ClientPtr	client;
-    CARD32 	delete_id;
-    int		num_waitconditions;
-} SyncAwaitHeader;
-
-typedef struct {
-    SyncTrigger trigger;
-    CARD64	event_threshold;
-    SyncAwaitHeader *pHeader;
-} SyncAwait;
-
-typedef union {
-    SyncAwaitHeader header;
-    SyncAwait	    await;
-} SyncAwaitUnion;
-
-
-extern pointer SyncCreateSystemCounter(
-    char *	/* name */,
-    CARD64  	/* inital_value */,
-    CARD64  	/* resolution */,
-    SyncCounterType /* change characterization */,
-    void        (* /*QueryValue*/ ) (
-        pointer /* pCounter */,
-        CARD64 * /* pValue_return */), /* XXX prototype */
-    void        (* /*BracketValues*/) (
-        pointer /* pCounter */, 
-        CARD64 * /* pbracket_less */,
-        CARD64 * /* pbracket_greater */)
-);
-
-extern void SyncChangeCounter(
-    SyncCounter *	/* pCounter*/,
-    CARD64  		/* new_value */
-);
-
-extern void SyncDestroySystemCounter(
-    pointer pCounter
-);
-extern void InitServertime(void);
-
-#endif /* _SYNC_SERVER */
-
-#endif /* _SYNCSTR_H_ */
+#endif /* _SYNCPROTO_H_ */

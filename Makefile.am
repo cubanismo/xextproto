@@ -16,8 +16,8 @@ xext_HEADERS = \
 	shapeproto.h \
 	shm.h \
 	shmproto.h \
-	sync.h \
-	syncstr.h \
+	syncconst.h \
+	syncproto.h \
 	ag.h \
 	agproto.h \
 	cup.h \
