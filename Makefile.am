@@ -6,13 +6,7 @@ xext_HEADERS = \
         ge.h \
         geproto.h \
         Xge.h \
-	lbxbuf.h \
-	lbxbufstr.h \
-	lbxdeltastr.h \
-	lbximage.h \
-	lbxopts.h \
 	lbxstr.h \
-	lbxzlib.h \
 	MITMisc.h \
 	mitmiscstr.h \
 	multibuf.h \
