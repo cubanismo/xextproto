@@ -1,6 +1,4 @@
 /*
- * $Xorg: multibufst.h,v 1.4 2001/02/09 02:03:24 xorgcvs Exp $
- *
 Copyright 1989, 1998  The Open Group
 
 Permission to use, copy, modify, distribute, and sell this software and its
@@ -23,8 +21,6 @@ Except as contained in this notice, the name of The Open Group shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from The Open Group.
  */
-
-/* $XFree86: xc/include/extensions/multibufst.h,v 3.8 2001/12/19 21:37:29 dawes Exp $ */
 
 #ifndef _MULTIBUFPROTO_H_
 #define _MULTIBUFPROTO_H_

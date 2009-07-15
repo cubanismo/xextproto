@@ -24,8 +24,6 @@ in this Software without prior written authorization from The Open Group.
 
 ********************************************************/
 
-/* $Xorg: shapestr.h,v 1.4 2001/02/09 02:03:24 xorgcvs Exp $ */
-
 #ifndef _SHAPEPROTO_H_
 #define _SHAPEPROTO_H_
 

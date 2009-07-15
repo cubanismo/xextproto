@@ -1,4 +1,3 @@
-/* $Xorg: dpmsstr.h,v 1.3 2000/08/18 04:05:45 coskrey Exp $ */
 /*****************************************************************
 
 Copyright (c) 1996 Digital Equipment Corporation, Maynard, Massachusetts.
@@ -26,14 +25,6 @@ dealings in this Software without prior written authorization from Digital
 Equipment Corporation.
 
 ******************************************************************/
-/* $XFree86$ */
-
-/*
- * HISTORY
- */
-/*
- * @(#)RCSfile: dpmsstr.h,v Revision: 1.1.4.2  (DEC) Date: 1995/11/21 19:34:19
- */
 
 #ifndef _DPMSPROTO_H_
 #define _DPMSPROTO_H_

@@ -1,4 +1,3 @@
-/* $XFree86$ */
 /************************************************************
 
 Copyright 1989, 1998  The Open Group
@@ -26,8 +25,6 @@ in this Software without prior written authorization from The Open Group.
 ********************************************************/
 
 /* RANDOM CRUFT! THIS HAS NO OFFICIAL X CONSORTIUM OR X PROJECT TEAM BLESSING */
-
-/* $Xorg: mitmiscstr.h,v 1.4 2001/02/09 02:03:24 xorgcvs Exp $ */
 
 #ifndef _MITMISCPROTO_H_
 #define _MITMISCPROTO_H_
