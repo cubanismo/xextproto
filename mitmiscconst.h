@@ -27,8 +27,8 @@ in this Software without prior written authorization from The Open Group.
 /* RANDOM CRUFT! THIS HAS NO OFFICIAL X CONSORTIUM OR X PROJECT TEAM BLESSING */
 
 
-#ifndef _MITMISC_H_
-#define _MITMISC_H_
+#ifndef _MITMISCCONST_H_
+#define _MITMISCCONST_H_
 
 #define MITMiscNumberEvents		0
 #define MITMiscNumberErrors		0

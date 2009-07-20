@@ -6,7 +6,7 @@ xext_HEADERS = \
         geproto.h \
 	lbx.h \
 	lbxproto.h \
-	mitmisc.h \
+	mitmiscconst.h \
 	mitmiscproto.h \
 	multibufconst.h \
 	multibufproto.h \

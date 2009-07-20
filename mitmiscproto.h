@@ -29,7 +29,7 @@ in this Software without prior written authorization from The Open Group.
 #ifndef _MITMISCPROTO_H_
 #define _MITMISCPROTO_H_
 
-#include <X11/extensions/mitmisc.h>
+#include <X11/extensions/mitmiscconst.h>
 
 #define X_MITSetBugMode			0
 #define X_MITGetBugMode			1
