@@ -28,7 +28,7 @@ xext_HEADERS = \
 	EVIproto.h \
 	xtestext1proto.h \
 	xtestext1const.h \
-	xtest.h \
+	xtestconst.h \
 	xtestproto.h
 
 pkgconfigdir = $(libdir)/pkgconfig

@@ -27,7 +27,7 @@ in this Software without prior written authorization from The Open Group.
 #ifndef _XTESTPROTO_H_
 #define _XTESTPROTO_H_
 
-#include <X11/extensions/xtest.h>
+#include <X11/extensions/xtestconst.h>
 
 #define Window CARD32
 #define Time CARD32
