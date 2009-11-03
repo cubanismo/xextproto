@@ -31,6 +31,16 @@ xext_HEADERS = \
 	xtestconst.h \
 	xtestproto.h
 
+#
+# These headers allow old servers to be built with
+# new headers
+#
+compatdir = $(xextdir)
+compat_HEADERS = \
+	shapestr.h \
+	shmstr.h \
+	syncstr.h
+
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xextproto.pc
 
