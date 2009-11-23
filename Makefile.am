@@ -46,6 +46,8 @@ pkgconfig_DATA = xextproto.pc
 
 EXTRA_DIST = xextproto.pc.in geproto.txt
 
+MAINTAINERCLEANFILES = ChangeLog INSTALL
+
 .PHONY: ChangeLog INSTALL
 
 INSTALL:
