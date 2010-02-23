@@ -71,6 +71,7 @@ PERFORMANCE OF THIS SOFTWARE.
 #define X_SyncTriggerFence	       15
 #define X_SyncResetFence	       16
 #define X_SyncDestroyFence	       17
+#define X_SyncQueryFence	       18
 
 /* cover up types from sync.h to make sure they're the right size for
  * protocol packaging.  These will be undef'ed after all the protocol
@@ -389,6 +390,33 @@ typedef struct _xSyncDestroyFenceReq {
     XSyncFence	fid B32;
 } xSyncDestroyFenceReq;
 #define sz_xSyncDestroyFenceReq		8
+
+/*
+ * Query a fence object
+ */
+typedef struct _xSyncQueryFenceReq {
+    CARD8	reqType;
+    CARD8	syncReqType;
+    CARD16	length B16;
+    XSyncFence	fid B32;
+} xSyncQueryFenceReq;
+#define sz_xSyncQueryFenceReq		8
+
+typedef struct {
+    BYTE	type;
+    CARD8	unused;
+    CARD16	sequenceNumber B16;
+    CARD32	length B32;
+    BOOL	triggered;
+    BYTE	pad0;
+    CARD16	pad1 B16;
+    CARD32	pad2 B32;
+    CARD32	pad3 B32;
+    CARD32	pad4 B32;
+    CARD32	pad5 B32;
+    CARD32	pad6 B32;
+} xSyncQueryFenceReply;
+#define sz_xSyncQueryFenceReply		32
 
 /*
  * Events
