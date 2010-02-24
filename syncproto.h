@@ -72,6 +72,7 @@ PERFORMANCE OF THIS SOFTWARE.
 #define X_SyncResetFence	       16
 #define X_SyncDestroyFence	       17
 #define X_SyncQueryFence	       18
+#define X_SyncAwaitFence	       19
 
 /* cover up types from sync.h to make sure they're the right size for
  * protocol packaging.  These will be undef'ed after all the protocol
@@ -399,6 +400,17 @@ typedef struct _xSyncQueryFenceReq {
     XSyncFence	fid B32;
 } xSyncQueryFenceReq;
 #define sz_xSyncQueryFenceReq		8
+
+/*
+ * Wait for any of a list of fence sync objects
+ * to reach the "triggered" state.
+ */
+typedef struct _xSyncAwaitFenceReq {
+    CARD8	reqType;
+    CARD8	syncReqType;
+    CARD16	length B16;
+} xSyncAwaitFenceReq;
+#define sz_xSyncAwaitFenceReq		4
 
 typedef struct {
     BYTE	type;
