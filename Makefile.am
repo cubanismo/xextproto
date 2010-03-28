@@ -46,7 +46,6 @@ pkgconfig_DATA = xextproto.pc
 
 dist_doc_DATA = geproto.txt
 
-EXTRA_DIST = xextproto.pc.in
 
 MAINTAINERCLEANFILES = ChangeLog INSTALL
 
