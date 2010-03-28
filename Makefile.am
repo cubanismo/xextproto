@@ -44,7 +44,9 @@ compat_HEADERS = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xextproto.pc
 
-EXTRA_DIST = xextproto.pc.in geproto.txt
+dist_doc_DATA = geproto.txt
+
+EXTRA_DIST = xextproto.pc.in
 
 MAINTAINERCLEANFILES = ChangeLog INSTALL
 
