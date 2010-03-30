@@ -5,7 +5,7 @@
 
 1. Introduction
 2. Extension Initialization
-3. Extension Events
+3. Events
 4. Notes
 
 _____________________________________________________________________________
@@ -47,14 +47,15 @@ The name of this extension is "Generic Event Extension"
 
         As of version 1.0, no other requests are provided by this extension.
 _____________________________________________________________________________
-3. Extension Events
+3. Events
 
-GE defines a single event, to be used by all extensions. The event's structure 
-is similar to a reply.
+GE defines a single event, to be used by all extensions. The event's structure
+is similar to a reply.  This is a core protocol event, ID 35, and is not itself
+an extension event.
 
 ┌───
     GenericEvent
-	type: BYTE;			always GenericEvent
+	type: BYTE;			always GenericEvent (35)
 	extension: CARD8;		extension offset
 	sequenceNumber: CARD16		low 16 bits of request seq. number
 	length: CARD32			length
