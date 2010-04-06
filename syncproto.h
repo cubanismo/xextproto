@@ -350,12 +350,13 @@ typedef struct _xSyncCreateFenceReq {
     CARD8	reqType;
     CARD8	syncReqType;
     CARD16	length B16;
+    INT32	screen B32;
     XSyncFence	fid B32;
     BOOL	initially_triggered;
     CARD8	pad0;
     CARD16	pad1;
 } xSyncCreateFenceReq;
-#define sz_xSyncCreateFenceReq		12
+#define sz_xSyncCreateFenceReq		16
 
 /*
  * Put a fence object in the "triggered" state.
