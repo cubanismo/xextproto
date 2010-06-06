@@ -81,6 +81,7 @@ PERFORMANCE OF THIS SOFTWARE.
 #define XSyncCounter CARD32
 #define XSyncAlarm   CARD32
 #define XSyncFence   CARD32
+#define Drawable     CARD32
 
 /*
  * Initialize
@@ -350,7 +351,7 @@ typedef struct _xSyncCreateFenceReq {
     CARD8	reqType;
     CARD8	syncReqType;
     CARD16	length B16;
-    INT32	screen B32;
+    Drawable	d B32;
     XSyncFence	fid B32;
     BOOL	initially_triggered;
     CARD8	pad0;
@@ -467,6 +468,7 @@ typedef struct _xSyncAlarmNotifyEvent {
 #undef XSyncCounter
 #undef XSyncAlarm
 #undef XSyncFence
+#undef Drawable
 
 
 #endif /* _SYNCPROTO_H_ */
