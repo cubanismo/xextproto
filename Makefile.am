@@ -46,9 +46,6 @@ compat_HEADERS = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = xextproto.pc
 
-dist_doc_DATA = geproto.txt
-
-
 MAINTAINERCLEANFILES = ChangeLog INSTALL
 
 .PHONY: ChangeLog INSTALL

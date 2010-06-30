@@ -23,7 +23,7 @@
 
 if ENABLE_SPECS
 doc_sources = dbe.xml security.xml sync.xml
-dist_doc_DATA = $(doc_sources)
+dist_doc_DATA = $(doc_sources) geproto.txt
 
 if HAVE_XMLTO
 doc_DATA = $(doc_sources:.xml=.html)
