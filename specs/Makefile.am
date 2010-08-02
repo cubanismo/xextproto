@@ -27,6 +27,7 @@ doc_sources =		\
 	dbe.xml		\
 	dpms.xml	\
 	evi.xml		\
+	multibuf.xml	\
 	security.xml	\
 	shape.xml	\
 	shm.xml		\
