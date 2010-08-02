@@ -32,7 +32,8 @@ doc_sources =		\
 	shape.xml	\
 	shm.xml		\
 	sync.xml	\
-	tog-cup.xml
+	tog-cup.xml	\
+	xtest.xml
 
 dist_doc_DATA = $(doc_sources) geproto.txt
 
