@@ -22,7 +22,7 @@
 #
 
 if ENABLE_SPECS
-doc_sources = dbe.xml security.xml shape.xml shm.xml sync.xml
+doc_sources = dbe.xml dpms.xml security.xml shape.xml shm.xml sync.xml
 dist_doc_DATA = $(doc_sources) geproto.txt
 
 if HAVE_XMLTO
