@@ -26,6 +26,7 @@ doc_sources =		\
 	appgroup.xml	\
 	dbe.xml		\
 	dpms.xml	\
+	evi.xml		\
 	security.xml	\
 	shape.xml	\
 	shm.xml		\
