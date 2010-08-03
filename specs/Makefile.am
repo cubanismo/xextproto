@@ -27,6 +27,7 @@ doc_sources =		\
 	dbe.xml		\
 	dpms.xml	\
 	evi.xml		\
+	geproto.xml	\
 	multibuf.xml	\
 	security.xml	\
 	shape.xml	\
@@ -35,7 +36,7 @@ doc_sources =		\
 	tog-cup.xml	\
 	xtest.xml
 
-dist_doc_DATA = $(doc_sources) geproto.txt
+dist_doc_DATA = $(doc_sources)
 
 if HAVE_XMLTO
 doc_DATA = $(doc_sources:.xml=.html)
