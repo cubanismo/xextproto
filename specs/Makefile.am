@@ -23,7 +23,6 @@
 
 if ENABLE_SPECS
 doc_sources =		\
-	appgroup.xml	\
 	dbe.xml		\
 	dpms.xml	\
 	evi.xml		\
