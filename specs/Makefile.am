@@ -28,6 +28,7 @@ doc_sources =		\
 	dpms.xml	\
 	evi.xml		\
 	geproto.xml	\
+	lbx.xml		\
 	multibuf.xml	\
 	security.xml	\
 	shape.xml	\
