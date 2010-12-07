@@ -885,14 +885,15 @@ fence does not name a valid fence.
     <listitem>
 <literallayout class="monospaced">
 fence-list: LISTofFENCE
-Errors: <function>Fence</function>,<function>Alloc</function>
+Errors: <function>Fence</function>,<function>Alloc</function>,<function>Value</function>
 </literallayout>
       <para>
 When this request is executed, the processing of further requests for the
 client is blocked until one or more of the fences in fence-list reaches the
 triggered state.  If any of the fences are already in the triggered state,
 request processing resumes immediately. A <function>Fence</function> error
-is generated if any member of fence-list does not name a valid fence.
+is generated if any member of fence-list does not name a valid fence. A
+<function>Value</function> error is generated if fence-list is empty.
       </para>
     </listitem>
   </varlistentry>
