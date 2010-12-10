@@ -9,7 +9,7 @@ by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,ref
 <book id="sync">
 
 <bookinfo>
-   <title>X Synchronization Extention Protocol</title>
+   <title>X Synchronization Extension Protocol</title>
    <subtitle>X Consortium Standard</subtitle>
    <releaseinfo>X Version 11, Release 6.6.84</releaseinfo>
    <authorgroup>
@@ -20,12 +20,12 @@ by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,ref
      <othercredit>
         <firstname>Dave</firstname>
         <surname>Carver</surname>
-        <affiliation><orgname>Digital EquipmentCorporation, MIT/Project Athena</orgname></affiliation>
+        <affiliation><orgname>Digital Equipment Corporation, MIT/Project Athena</orgname></affiliation>
      </othercredit>
      <othercredit>
        <firstname>Jim</firstname>
        <surname>Gettys</surname>
-       <affiliation><orgname>Digital EquipmentCorporation, Cambridge Research Laboratory</orgname></affiliation>
+       <affiliation><orgname>Digital Equipment Corporation, Cambridge Research Laboratory</orgname></affiliation>
      </othercredit>
      <othercredit>
        <firstname>David</firstname>
