@@ -4,7 +4,7 @@
 
 
 <!-- lifted from troff+ms+XMan by doclifter -->
-<book id="mit-shm">
+<book id="shm">
 
 <bookinfo>
    <title>MIT-SHM(The MIT Shared Memory Extension)</title>
