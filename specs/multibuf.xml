@@ -4,7 +4,7 @@
 
 
 <!-- lifted from troff+ms+XMan by doclifter -->
-<book id="buffer">
+<book id="multibuf">
 
 <bookinfo>
    <title>Extending X for Double-Buffering, Multi-Buffering, and Stereo</title>
