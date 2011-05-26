@@ -1141,7 +1141,7 @@ All functions that have return type Status will return nonzero for
 success and zero for failure.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xsecurityqueryextension'>
 <funcprototype>
   <funcdef>Status <function>XSecurityQueryExtension</function></funcdef>
     <paramdef>Display <parameter> *dpy</parameter></paramdef>
@@ -1162,7 +1162,7 @@ function. If a client violates this rule, the effects of all subsequent
 XSecurity calls that it makes are undefined.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xsecurityallocxauth'>
 <funcprototype>
   <funcdef>Xauth *<function>XSecurityAllocXauth</function></funcdef>
     <paramdef><parameter>void</parameter></paramdef>
@@ -1266,7 +1266,7 @@ The Xauth structure returned by this function is initialized as follows:
 name_length and data_length are zero, and name and data are NULL.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xsecurityfreexauth'>
 <funcprototype>
   <funcdef>void <function>XSecurityFreeXauth</function></funcdef>
     <paramdef>Xauth<parameter> *auth</parameter></paramdef>
@@ -1287,7 +1287,7 @@ function, including the name and data fields.
 </para>
 
 
-<funcsynopsis>
+<funcsynopsis id='xsecurityrevokeauthorization'>
 <funcprototype>
   <funcdef>Bool <function>XSecurityRevokeAuthorization</function></funcdef>
     <paramdef>Display<parameter> *dpy</parameter></paramdef>
@@ -1304,7 +1304,7 @@ clients that attempt to connect using that authorization will be refused.
 </para>
 
 
-<funcsynopsis>
+<funcsynopsis id='xsecuritygenerateauthorization'>
 <funcprototype>
   <funcdef>Xauth *<function>XSecurityGenerateAuthorization</function></funcdef>
     <paramdef>Display<parameter> *dpy</parameter></paramdef>

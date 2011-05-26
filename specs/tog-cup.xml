@@ -354,7 +354,7 @@ The include file for this extension is
 <function>&lt;X11/extensions/Xcup.h&gt;</function>.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xcupqueryversion'>
 <funcprototype>
   <funcdef>Status <function> XCupQueryVersion</function></funcdef>
   <paramdef>Display*<parameter> display</parameter></paramdef>
@@ -414,7 +414,7 @@ To get the list of reserved colormap entries, use
 XCupGetReservedColormapEntries.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xcupgetreservedcolormapentries'>
 <funcprototype>
   <funcdef>Status <function> XCupGetReservedColormapEntries</function></funcdef>
   <paramdef>Display*<parameter> display</parameter></paramdef>
@@ -468,7 +468,7 @@ To allocate one or more read-only color cells with RGB values, use
 XCupStoreColors.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xcupstorecolors'>
 <funcprototype>
   <funcdef>Status <function> XCupStoreColors</function></funcdef>
   <paramdef>Display*<parameter> display</parameter></paramdef>

@@ -374,7 +374,7 @@ The include file for this extension is:
 <function>&lt; X11/extensions/XEVI.h&gt;</function>.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xeviqueryversion'>
 <funcprototype>
   <funcdef>Bool <function> XeviQueryVersion</function></funcdef>
   <paramdef>Display<parameter> *display</parameter></paramdef>
@@ -433,7 +433,7 @@ To get the extended information for any subset of visuals use
 XeviGetVisualInfo.
 </para>
 
-<funcsynopsis>
+<funcsynopsis id='xevigetvisualinfo'>
 <funcprototype>
   <funcdef>int <function> XeviGetVisualInfo</function></funcdef>
   <paramdef>Display<parameter> *display</parameter></paramdef>
