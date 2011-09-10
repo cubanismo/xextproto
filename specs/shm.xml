@@ -16,11 +16,10 @@
          <affiliation><orgname>Atmospheric Technology Division National Center for Atmospheric Research</orgname></affiliation>
       <email>corbet@ncar.ucar.edu</email>
       </author>
-      <othercredit>
-         <contrib>Formatted and edited for release 5 by</contrib>
+      <editor>
          <firstname>Keith</firstname><surname>Packard</surname>
          <affiliation><orgname>MIT X Consortium</orgname></affiliation>
-      </othercredit>
+      </editor>
    </authorgroup>
    <corpname>X Consortium Standard</corpname>
    <copyright><year>1991</year><holder>X Consortium</holder></copyright>
