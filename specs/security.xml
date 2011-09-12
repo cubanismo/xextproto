@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-                   "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+                   "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+]>
 <!--translated from security.tex, on 2010-06-27 15:29:00,
 by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)
 xhtml,docbook,html,refcaption -->
@@ -10,7 +13,7 @@ xhtml,docbook,html,refcaption -->
 <bookinfo>
    <title>Security Extension Specification</title>
    <subtitle>X Consortium Standard</subtitle>
-   <releaseinfo>X Version 11, Release 6.8</releaseinfo>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <date>November 15, 1996</date>
    <authorgroup>
       <author>

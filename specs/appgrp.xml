@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE article
           PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-          "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+          "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+]>
 
 <article id="appgrp">
 
 <articleinfo>
    <title>Application Group Extension to the X Protocol</title>
    <subtitle>X Consortium Standard</subtitle>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <authorgroup>
      <author>
        <firstname>Kaleb</firstname>
@@ -17,7 +21,6 @@
        <email>kaleb@x.org</email>
      </author>
    </authorgroup>
-   <releaseinfo>X Version 11, Release 6.4</releaseinfo>
    <date>27 September 1996</date>
 
 <legalnotice>

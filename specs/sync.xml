@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
-                   "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+                   "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd"
+[
+<!ENTITY % defs SYSTEM "defs.ent"> %defs;
+]>
 
 <!--translated from sync.tex, on 2010-06-29 10:52:00,
 by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,refcaption -->
@@ -11,7 +14,7 @@ by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,ref
 <bookinfo>
    <title>X Synchronization Extension Protocol</title>
    <subtitle>X Consortium Standard</subtitle>
-   <releaseinfo>X Version 11, Release 6.6.84</releaseinfo>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <authorgroup>
      <author>
        <firstname>Tim</firstname><surname>Glauert</surname>
