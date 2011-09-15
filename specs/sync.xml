@@ -16,25 +16,35 @@ by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,ref
    <subtitle>X Consortium Standard</subtitle>
    <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <authorgroup>
-     <author>
-       <firstname>Tim</firstname><surname>Glauert</surname>
-       <affiliation><orgname>Olivetti Research/MultiWorks</orgname></affiliation>
-     </author>
-     <othercredit>
-        <firstname>Dave</firstname>
-        <surname>Carver</surname>
-        <affiliation><orgname>Digital Equipment Corporation, MIT/Project Athena</orgname></affiliation>
-     </othercredit>
-     <othercredit>
-       <firstname>Jim</firstname>
-       <surname>Gettys</surname>
-       <affiliation><orgname>Digital Equipment Corporation, Cambridge Research Laboratory</orgname></affiliation>
-     </othercredit>
-     <othercredit>
-       <firstname>David</firstname>
-       <surname>Wiggins</surname>
-       <affiliation><orgname>X Consortium, Inc.</orgname></affiliation>
-     </othercredit>
+      <author>
+        <firstname>Tim</firstname><surname>Glauert</surname>
+        <affiliation>
+          <orgname>Olivetti Research</orgname>
+          <orgdiv>MultiWorks</orgdiv>
+        </affiliation>
+      </author>
+      <othercredit>
+          <firstname>Dave</firstname>
+          <surname>Carver</surname>
+          <affiliation>
+            <orgname>Digital Equipment Corporation</orgname>
+            <orgdiv>MIT/Project Athena</orgdiv>
+          </affiliation>
+      </othercredit>
+      <othercredit>
+        <firstname>Jim</firstname>
+        <surname>Gettys</surname>
+        <affiliation>
+          <orgname>Digital Equipment Corporation</orgname>
+          <orgdiv>Cambridge Research Laboratory</orgdiv>
+        </affiliation>
+      </othercredit>
+      <othercredit>
+        <firstname>David</firstname>
+        <othername>P.</othername>
+        <surname>Wiggins</surname>
+        <affiliation><orgname>X Consortium, Inc.</orgname></affiliation>
+      </othercredit>
      <othercredit>
        <firstname>James</firstname>
        <surname>Jones</surname>
