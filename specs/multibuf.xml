@@ -11,8 +11,6 @@
 
 <bookinfo>
    <title>Extending X for Double-Buffering, Multi-Buffering, and Stereo</title>
-   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
-
    <authorgroup>
       <othercredit>
          <firstname>Jeffrey</firstname><surname>Friedberg</surname>
@@ -25,10 +23,8 @@
       </othercredit>
    </authorgroup>
    <copyright><year>1989</year><holder>Digital Equipment Corporation</holder></copyright>
-   <copyright><year>1989</year><holder>X Consortium</holder></copyright>
-   <copyright><year>1994</year><holder>X Consortium</holder></copyright>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <releaseinfo>Version 3.3</releaseinfo>
-   <affiliation><orgname>X Consortium</orgname></affiliation>
 
 <legalnotice>
 <para>
@@ -41,6 +37,10 @@ this document.  This documentation is provided "as is"
 without express or implied warranty.  This document
 is subject to change.
 </para>
+</legalnotice>
+
+<legalnotice>
+<para role="multiLicensing">Copyright © 1989, 1994 X Consortium</para>
 <para>
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the ``Software''), to deal
@@ -54,7 +54,7 @@ The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 </para>
 <para>
-THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
@@ -66,9 +66,7 @@ Except as contained in this notice, the name of the X Consortium shall not be
 used in advertising or otherwise to promote the sale, use or other dealings
 in this Software without prior written authorization from the X Consortium.
 </para>
-<para>
-<emphasis remap='I'>X Window System</emphasis> is a trademark of X Consortium, Inc.
-</para>
+<para>X Window System is a trademark of The OpenGroup.</para>
 
 </legalnotice>
 </bookinfo>
