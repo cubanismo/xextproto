@@ -21,9 +21,7 @@
          <affiliation><orgname>The Open Group</orgname></affiliation>
       </author>
    </authorgroup>
-   <corpname>X Consortium Standard</corpname>
    <copyright><year>1986-1997</year><holder>The Open Group</holder></copyright>
-   <affiliation><orgname>X Consortium</orgname></affiliation>
 
 <legalnotice>
 
@@ -45,7 +43,7 @@ The above copyright notice and the following permission notice shall be
 included in all copies of the Software:
 </para>
 <para>
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES
 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-
 INFRINGEMENT.  IN NO EVENT SHALL THE OPEN GROUP BE LIABLE FOR ANY
