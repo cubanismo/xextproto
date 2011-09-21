@@ -10,8 +10,6 @@
 <bookinfo>
    <title>X Display Power Management Signaling (DPMS) Extension Protocol Specification</title>
    <subtitle>X Project Team Standard</subtitle>
-   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
-   <releaseinfo>Version 1.0</releaseinfo>
    <authorgroup>
       <author>
          <firstname>Rob </firstname><surname>Lembree</surname>
@@ -19,9 +17,9 @@
          <email>lembree@zk3.dec.com</email>
       </author>
    </authorgroup>
-   <corpname>X Consortium Standard</corpname>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+   <releaseinfo>Version 1.0</releaseinfo>
    <copyright><year>1996</year><holder>Digital Equipment Corporation</holder></copyright>
-   <affiliation><orgname>X Consortium</orgname></affiliation>
 
 <legalnotice>
 <para>
@@ -31,7 +29,7 @@ provided that the above copyright notice and this permission
 notice appear in all copies.  Digital Equipment Corporation
 makes no representations about the suitability for any purpose
 of the information in this document.  This documentation is
-provided "as is" without express or implied warranty.
+provided &ldquo;as is&rdquo; without express or implied warranty.
 </para>
 
 </legalnotice>
