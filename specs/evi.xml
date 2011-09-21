@@ -11,17 +11,15 @@
 <bookinfo>
    <title>Extended Visual Information Extension</title>
    <subtitle>X Project Team Standard</subtitle>
-   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
-   <releaseinfo>Version 1.0</releaseinfo>
    <authorgroup>
       <author>
          <firstname>Peter</firstname><surname>Daifuku</surname>
          <affiliation><orgname>Silicon Graphics, Inc.</orgname></affiliation>
       </author>
    </authorgroup>
-   <corpname>X Consortium Standard</corpname>
-   <copyright><year>1986-97</year><holder>The Open Group</holder></copyright>
-   <affiliation><orgname>X Consortium</orgname></affiliation>
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
+   <releaseinfo>Version 1.0</releaseinfo>
+   <copyright><year>1986-1997</year><holder>The Open Group</holder></copyright>
 
 <legalnotice>
 
@@ -42,7 +40,7 @@ included in all copies of the Software:
 </para>
 
 <para>
-THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND,
+THE SOFTWARE IS PROVIDED &ldquo;AS IS&rdquo;, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE WARRANTIES
 OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-
 INFRINGEMENT.  IN NO EVENT SHALL THE OPEN GROUP BE LIABLE FOR ANY
