@@ -14,7 +14,6 @@ by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,ref
 <bookinfo>
    <title>X Synchronization Extension Protocol</title>
    <subtitle>X Consortium Standard</subtitle>
-   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <authorgroup>
       <author>
         <firstname>Tim</firstname><surname>Glauert</surname>
@@ -51,20 +50,14 @@ by TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/) xhtml,docbook,html,ref
        <affiliation><orgname>NVIDIA Corporation</orgname></affiliation>
      </othercredit>
    </authorgroup>
-   <corpname>X Consortium Standard</corpname>
-
-   <copyright>
-     <year>1991</year>
-       <holder>
-Olivetti Research Limited, Cambridge England and
-Digital Equipment Corporation, Maynard, Massachusetts
-       </holder>
-   </copyright>
-   <copyright><year>1991</year><holder>X Consortium</holder></copyright>
-   <copyright><year>2010</year><holder>NVIDIA Corporation</holder></copyright>
-
+   <releaseinfo>X Version 11, Release &fullrelvers;</releaseinfo>
    <releaseinfo>Version 3.1</releaseinfo>
-   <affiliation><orgname>X Consortium</orgname></affiliation>
+   <copyright><year>1991</year>
+       <holder>Olivetti Research Limited, Cambridge England</holder>
+       <holder>Digital Equipment Corporation, Maynard, Massachusetts</holder>
+       <holder>X Consortium</holder>
+   </copyright>
+   <copyright><year>2010</year><holder>NVIDIA Corporation</holder></copyright>
 
 <legalnotice>
 <para>
