@@ -56,7 +56,7 @@ in this Software without prior written authorization from the X Consortium.
 
 </bookinfo>
 
-<chapter id="introduction">
+<chapter id='Introduction'>
 <title>Introduction</title>
 
 <para>
@@ -67,10 +67,10 @@ clients (defined below).
 
 </chapter>
 
-<chapter id="requests">
+<chapter id='Requests'>
 <title>Requests</title>
 
-<sect1 id="securityqueryversion">
+<sect1 id='SecurityQueryVersion'>
 <title>SecurityQueryVersion</title>
 <para>
 This request returns the major and minor version numbers of this extension.
@@ -150,7 +150,7 @@ protocol version; otherwise, the client will get undefined behavior
 </para>
 </sect1>
 
-<sect1 id="securitygenerateauthentication">
+<sect1 id='SecurityGenerateAuthorization'>
 <title>SecurityGenerateAuthorization</title>
 
 <para>
@@ -460,7 +460,7 @@ authorization-data-return this way.
 
 </sect1>
 
-<sect1 id="securityrevokeauthorization">
+<sect1 id='SecurityRevokeAuthorization'>
 <title>SecurityRevokeAuthorization</title>
 
 <para>
@@ -506,14 +506,14 @@ with this authorization will fail.
 </sect1>
 </chapter>
 
-<chapter id="changes_to_core_requests">
+<chapter id='Changes_to_Core_Requests'>
 <title>Changes to Core Requests</title>
 
 <para>
 A server supporting this extension modifies the handling of some core
 requests in the following ways.
 </para>
-<sect1 id="resource_id_usage">
+<sect1 id='Resource_ID_Usage'>
 <title>Resource ID Usage</title>
 
 <para>
@@ -603,7 +603,7 @@ ISSUE: are root window exceptions needed for these? WarpPointer, ReparentWindow
 </note>
 
 </sect1>
-<sect1 id="extension_security">
+<sect1 id='Extension_Security'>
 <title>Extension Security</title>
 
 <para>
@@ -638,7 +638,7 @@ opcode will fail with a Request error.
 
 </sect1>
 
-<sect1 id="keyboard_security">
+<sect1 id='Keyboard_Security'>
 <title>Keyboard Security</title>
 
 
@@ -705,7 +705,7 @@ expected. This is in line with the root window exceptions above.
 </para>
 </sect1>
 
-<sect1 id="image_security">
+<sect1 id='Image_Security'>
 <title>Image Security</title>
 
 <para>
@@ -745,8 +745,7 @@ to be an unusual configuration.
 
 </sect1>
 
-<sect1 id="property_security">
-
+<sect1 id='Property_Security'>
 <title>Property Security</title>
 
 <para>
@@ -840,7 +839,7 @@ field in the reply is zero).
 
 </sect1>
 
-<sect1 id="miscellaneous_security">
+<sect1 id='Miscellaneous_Security'>
 <title>Miscellaneous Security</title>
 
 <para>
@@ -859,7 +858,7 @@ a SelectionNotify event to the requestor with property None.
 </sect1>
 </chapter>
 
-<chapter id="new_authorization_method">
+<chapter id='New_Authorization_Method'>
 <title>New Authorization Method</title>
 
 <para>
@@ -998,7 +997,7 @@ policy-type Permit.
 
 </chapter>
 
-<chapter id="encoding">
+<chapter id='Encoding'>
 <title>Encoding</title>
 
 <para>
@@ -1010,14 +1009,14 @@ uses syntactic conventions and data types established there.
 The name of this extension is "SECURITY".
 </para>
 
-<sect1 id="types">
+<sect1 id='Types'>
 <title>Types</title>
 <para>
 AUTHID: CARD32
 </para>
 </sect1>
 
-<sect1 id="request_encoding">
+<sect1 id='Request_Encoding'>
 <title>Request Encoding</title>
 
 <para>
@@ -1097,7 +1096,7 @@ r                         unused, r=pad(q)
 
 </sect1>
 
-<sect1 id="event_encoding">
+<sect1 id='Event_Encoding'>
 <title>Event Encoding</title>
 <para>
 <function>SecurityAuthorizationRevoked</function>
@@ -1113,7 +1112,7 @@ r                         unused, r=pad(q)
 
 </sect1>
 
-<sect1 id="authorization_method_encoding">
+<sect1 id='Authorization_Method_Encoding'>
 <title>Authorization Method Encoding</title>
 
 <para>
@@ -1151,7 +1150,7 @@ termination between STRs.
 </sect1>
 
 </chapter>
-<chapter id="c_language_binding">
+<chapter id='C_Language_Binding'>
 <title>C Language Binding</title>
 
 <para>
@@ -1164,7 +1163,7 @@ All functions that have return type Status will return nonzero for
 success and zero for failure.
 </para>
 
-<funcsynopsis id='xsecurityqueryextension'>
+<funcsynopsis id='XSecurityQueryExtension'>
 <funcprototype>
   <funcdef>Status <function>XSecurityQueryExtension</function></funcdef>
     <paramdef>Display <parameter> *dpy</parameter></paramdef>
@@ -1174,7 +1173,7 @@ success and zero for failure.
 </funcsynopsis>
 
 <para>
-<function>XSecurityQueryExtension</function> sets major_version_return and
+<xref linkend='XSecurityQueryExtension' xrefstyle='select: title'/> sets major_version_return and
 minor_version_return to the major and minor Security protocol version
 supported by the server. If the Security library is compatible with the
 version returned by the server, it returns nonzero. If dpy does not support
@@ -1185,7 +1184,7 @@ function. If a client violates this rule, the effects of all subsequent
 XSecurity calls that it makes are undefined.
 </para>
 
-<funcsynopsis id='xsecurityallocxauth'>
+<funcsynopsis id='XSecurityAllocXauth'>
 <funcprototype>
   <funcdef>Xauth *<function>XSecurityAllocXauth</function></funcdef>
     <paramdef><parameter>void</parameter></paramdef>
@@ -1198,9 +1197,9 @@ allocate and deallocate them.
 </para>
 
 <para>
-<function>XSecurityAllocXauth</function> must be used to allocate the
+<xref linkend='XSecurityAllocXauth' xrefstyle='select: title'/> must be used to allocate the
 Xauth structure that is passed to
-<function>XSecurityGenerateAuthorization</function>.
+<xref linkend='XSecurityGenerateAuthorization' xrefstyle='select: title'/>.
 </para>
 
 <para>
@@ -1289,7 +1288,7 @@ The Xauth structure returned by this function is initialized as follows:
 name_length and data_length are zero, and name and data are NULL.
 </para>
 
-<funcsynopsis id='xsecurityfreexauth'>
+<funcsynopsis id='XSecurityFreeXauth'>
 <funcprototype>
   <funcdef>void <function>XSecurityFreeXauth</function></funcdef>
     <paramdef>Xauth<parameter> *auth</parameter></paramdef>
@@ -1297,20 +1296,20 @@ name_length and data_length are zero, and name and data are NULL.
 </funcsynopsis>
 
 <para>
-<function>XSecurityFreeXauth</function> must be used to free Xauth
+<xref linkend='XSecurityFreeXauth' xrefstyle='select: title'/> must be used to free Xauth
 structures allocated by
-<function>XSecurityAllocXauth</function> or returned by
-<function>XSecurityGenerateAuthorization</function>. It is the
+<xref linkend='XSecurityAllocXauth' xrefstyle='select: title'/> or returned by
+<xref linkend='XSecurityGenerateAuthorization' xrefstyle='select: title'/>. It is the
 caller's responsibility to fill in the name and data fields of Xauth structures
-allocated with <function>XSecurityAllocXauth</function>, so this function
+allocated with <xref linkend='XSecurityAllocXauth' xrefstyle='select: title'/>, so this function
 will not attempt to free them. In contrast, all storage associated with
 Xauth structures returned from
-<function>XSecurityGenerateAuthorization</function> will be freed by this
+<xref linkend='XSecurityGenerateAuthorization' xrefstyle='select: title'/> will be freed by this
 function, including the name and data fields.
 </para>
 
 
-<funcsynopsis id='xsecurityrevokeauthorization'>
+<funcsynopsis id='XSecurityRevokeAuthorization'>
 <funcprototype>
   <funcdef>Bool <function>XSecurityRevokeAuthorization</function></funcdef>
     <paramdef>Display<parameter> *dpy</parameter></paramdef>
@@ -1319,15 +1318,15 @@ function, including the name and data fields.
 </funcsynopsis>
 
 <para>
-<function>XSecurityRevokeAuthorization</function> deletes the authorization
+<xref linkend='XSecurityRevokeAuthorization' xrefstyle='select: title'/> deletes the authorization
 specified by auth_id, which must be a value returned in the auth_id_return
-parameter of <function>XSecurityGenerateAuthorization</function>. All
+parameter of <xref linkend='XSecurityGenerateAuthorization' xrefstyle='select: title'/>. All
 clients that connected with that authorization are be killed. Subsequently,
 clients that attempt to connect using that authorization will be refused.
 </para>
 
 
-<funcsynopsis id='xsecuritygenerateauthorization'>
+<funcsynopsis id='XSecurityGenerateAuthorization'>
 <funcprototype>
   <funcdef>Xauth *<function>XSecurityGenerateAuthorization</function></funcdef>
     <paramdef>Display<parameter> *dpy</parameter></paramdef>
@@ -1339,16 +1338,16 @@ clients that attempt to connect using that authorization will be refused.
 </funcsynopsis>
 
 <para>
-<function>XSecurityGenerateAuthorization</function> creates a new
+<xref linkend='XSecurityGenerateAuthorization' xrefstyle='select: title'/> creates a new
 authorization with the specified attributes. The auth_in argument must be
-allocated by <function>XSecurityAllocXauth</function>. The
+allocated by <xref linkend='XSecurityAllocXauth' xrefstyle='select: title'/>. The
 name and name_length fields of auth_in should be initialized to the
 authorization protocol name and its length in characters respectively.
 If there is authorization data, the data and data_length fields of
 auth_in should be initialized to the data and its length in characters
 respectivley. The library does not assume that name and data are
 null-terminated strings. The auth_in argument must be freed with
-<function>XSecurityFreeXauth</function>.
+<xref linkend='XSecurityFreeXauth' xrefstyle='select: title'/>.
 </para>
 
 <para>
@@ -1453,7 +1452,7 @@ the authorization data returned by the server. The caller should not assume
 that name and data are null-terminated strings. If no authorization data was
 returned by the server, the data and data_length fields will be set to NULL
 and zero repectively. The returned Xauth structure must be freed with
-<function>XSecurityFreeXauth</function>; the caller should not use any other
+<xref linkend='XSecurityFreeXauth' xrefstyle='select: title'/>; the caller should not use any other
 means free the structure or any of its components. The auth_id_return
 argument will be filled in with the non-zero authorization id of the created
 authorization.

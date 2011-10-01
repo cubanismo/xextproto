@@ -48,7 +48,7 @@ without express or implied warranty.
 </legalnotice>
 </bookinfo>
 
-<chapter id="introduction">
+<chapter id='Introduction'>
 <title>Introduction</title>
 <para>The Double Buffer Extension (DBE) provides a standard way to utilize
 double-buffering within the framework of the X Window System. Double-buffering
@@ -64,7 +64,7 @@ The result is a flicker-free animation.
 </para>
 </chapter>
 
-<chapter id="goals">
+<chapter id='Goals'>
 <title>Goals</title>
 <para>This extension should enable clients to:
 </para>
@@ -125,7 +125,7 @@ access (DGHA) architectures.
 
 </chapter>
 
-<chapter id="concepts">
+<chapter id='Concepts'>
 <title>Concepts</title>
 
 <para>
@@ -281,7 +281,7 @@ frame rate) should investigate the Synchronization Extension, an X
 Consortium standard.
 </para>
 
-<sect1 id="window_management_operations">
+<sect1 id='Window_Management_Operations'>
 <title>Window Management Operations</title>
 
 <para>
@@ -333,7 +333,7 @@ It is tiled with the window background in both buffers, and
 
 </sect1>
 
-<sect1 id="complex_swap_actions">
+<sect1 id='Complex_Swap_Actions'>
 <title>Complex Swap Actions</title>
 <para>
 DBE has no explicit knowledge of ancillary buffers (for example, depth
@@ -435,11 +435,11 @@ ensure best possible performance across a wide variety of implementations.
 </sect1>
 </chapter>
 
-<chapter id="requests">
+<chapter id='Requests'>
 <title>Requests</title>
 <para>The DBE defines the following requests.</para>
 
-<sect1 id="dbegetversion">
+<sect1 id='DBEGetVersion'>
 <title>DBEGetVersion</title>
 <para>
 This request returns the major and minor version numbers of this extension.
@@ -498,7 +498,7 @@ otherwise, the client will get undefined behavior (DBE may or may not work).
 
 </sect1>
 
-<sect1 id="dbegetvisualinfo">
+<sect1 id='DBEGetVisualInfo'>
 <title>DBEGetVisualInfo</title>
 <para>
 This request returns information about which visuals support double buffering.
@@ -577,7 +577,7 @@ returned, starting with screen zero.
 
 </sect1>
 
-<sect1 id="dbeallocatebackbuffername">
+<sect1 id='DBEAllocateBackBufferName'>
 <title>DBEAllocateBackBufferName</title>
 
 <para>
@@ -645,7 +645,7 @@ back-buffer-name is freed.
 </para>
 </sect1>
 
-<sect1 id="dbedeallocatebackbuffername">
+<sect1 id='DBEDeallocateBackBufferName'>
 <title>DBEDeallocateBackBufferName</title>
 <para>
 This request frees a drawable ID that was obtained by
@@ -683,7 +683,7 @@ a Buffer error results).
 </para>
 </sect1>
 
-<sect1 id="dbeswapbuffers">
+<sect1 id='DBESwapBuffers'>
 <title>DBESwapBuffers</title>
 <para>
 This request swaps the buffers for all windows listed, applying the
@@ -782,7 +782,7 @@ type of idiom, it must immediately follow the
 </para>
 </sect1>
 
-<sect1 id="dbebeginidiom">
+<sect1 id='DBEBeginIdiom'>
 <title>DBEBeginIdiom</title>
 <para>
 This request informs the server that a complex swap will immediately follow
@@ -800,7 +800,7 @@ free to implement this request as a no-op.
 </para>
 </sect1>
 
-<sect1 id="dbeendidiom">
+<sect1 id='DBEEndIdiom'>
 <title>DBEEndIdiom</title>
 
 
@@ -818,7 +818,7 @@ request as a no-op.
 
 </sect1>
 
-<sect1 id="dbegetbackbufferattributes">
+<sect1 id='DBEGetBackBufferAttributes'>
 <title>DBEGetBackBufferAttributes</title>
 
 <para>This request returns information about a back buffer.</para>
@@ -860,7 +860,7 @@ the window field of the attributes in the reply will be None.
 </sect1>
 </chapter>
 
-<chapter id="encoding">
+<chapter id='Encoding'>
 <title>Encoding</title>
 <para>
 Please refer to the X11 Protocol Encoding document as this section uses
@@ -869,7 +869,7 @@ syntactic conventions and data types established there.
 
 <para>The name of this extension is "DOUBLE-BUFFER".</para>
 
-<sect1 id="type">
+<sect1 id='Type'>
 <title>Type</title>
 <para>The following new types are used by the extension.
 </para>
@@ -906,7 +906,7 @@ BUFFER_ATTRIBUTES
 </literallayout>
 </sect1>
 
-<sect1 id="error">
+<sect1 id='Error'>
 <title>Error</title>
 <para><function>Buffer</function></para>
 <literallayout class="monospaced">
@@ -920,7 +920,7 @@ BUFFER_ATTRIBUTES
 </literallayout>
 </sect1>
 
-<sect1 id="request">
+<sect1 id='Request'>
 <title>Request</title>
 
 <literallayout class="monospaced">
@@ -1018,7 +1018,7 @@ DBEGetVersion
 
 </chapter>
 
-<chapter id="acknowledgements">
+<chapter id='Acknowledgements'>
 <title>Acknowledgements</title>
 <para>
 We wish to thank the following individuals who have contributed their time
@@ -1042,7 +1042,7 @@ draft of the specification. David served as architect.
 </para>
 </chapter>
 
-<chapter id="references">
+<chapter id='References'>
 <title>References</title>
 <para>
 Jeffrey Friedberg, Larry Seiler, and Jeff Vroom, "Multi-buffering Extension

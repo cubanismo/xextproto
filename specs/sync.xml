@@ -98,7 +98,7 @@ Consortium.</para>
 
 </bookinfo>
 
-<chapter id="synchronization_protocol">
+<chapter id='Synchronization_Protocol'>
 <title>Synchronization Protocol</title>
 <para>
 The core X protocol makes no guarantees about the relative order of execution
@@ -131,7 +131,7 @@ animation applications to be implemented without any round-trip requests and
 makes best use of buffering within the client, network, and server.
 </para>
 
-<sect1 id="description">
+<sect1 id='Description'>
 <title>Description</title>
 <para>
 The mechanism used by this extension for synchronization within the X
@@ -200,7 +200,7 @@ merely establishes an upper bound for the scope of fence operations.
 </para>
 
 </sect1>
-<sect1 id="types">
+<sect1 id='Types'>
 <title>Types</title>
 <para>
 Please refer to the X11 Protocol specification as this document uses
@@ -325,7 +325,7 @@ state.  Otherwise, the fence is in the not triggered state.
 
 </sect1>
 
-<sect1 id="errors">
+<sect1 id='Errors'>
 <title>Errors</title>
 
 <variablelist>
@@ -359,8 +359,7 @@ does not name a defined FENCE.
 </variablelist>
 
 </sect1>
-<sect1 id="requests">
-
+<sect1 id='Requests'>
 <title>Requests</title>
 
 <variablelist>
@@ -904,7 +903,7 @@ is generated if any member of fence-list does not name a valid fence.
 </variablelist>
 </sect1>
 
-<sect1 id="events">
+<sect1 id='Events'>
 <title>Events</title>
 
 <variablelist>
@@ -962,7 +961,7 @@ is destroyed, or the counter for the alarm is destroyed.
 </sect1>
 </chapter>
 
-<chapter id="encoding">
+<chapter id='Encoding'>
 <title>Encoding</title>
 <para>
 Please refer to the X11 Protocol Encoding document as this section uses
@@ -970,7 +969,7 @@ syntactic conventions established there and references types defined there.
 </para>
 <para>The name of this extension is "SYNC".</para>
 
-<sect1 id="encoding_new_types">
+<sect1 id='Encoding_New_Types'>
 <title>Encoding New Types</title>
 <para>
 The following new types are used by the extension.
@@ -1015,7 +1014,7 @@ groups, the byte ordering determined during connection setup is used.
 </para>
 </sect1>
 
-<sect1 id="encoding_errors">
+<sect1 id='Encoding_Errors'>
 <title>Encoding Errors</title>
 <literallayout class="monospaced">
 <function>Counter</function>
@@ -1046,7 +1045,7 @@ groups, the byte ordering determined during connection setup is used.
 
 </sect1>
 
-<sect1 id="encoding_requests">
+<sect1 id='Encoding_Requests'>
 <title>Encoding Requests</title>
 
 <literallayout class="monospaced">
@@ -1246,7 +1245,7 @@ AwaitFence
 
 </sect1>
 
-<sect1 id="encoding_events">
+<sect1 id='Encoding_Events'>
 <title>Encoding Events</title>
 
 <literallayout class="monospaced">

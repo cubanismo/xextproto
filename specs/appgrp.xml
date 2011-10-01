@@ -60,7 +60,7 @@ example, OpenDoc does, such as shared menu bars, etc.
 </abstract>
 </articleinfo>
 
-<sect1 id='purpose_and_goals'>
+<sect1 id='Purpose_and_Goals'>
 <title>Purpose and Goals</title>
 
 <para>
@@ -83,7 +83,7 @@ Computer, Inc. WinCenter is a trademark of Network Computing Devices, Inc.
 
 </sect1>
 
-<sect1 id='overview_of_the_protocol'>
+<sect1 id='Overview_of_the_protocol'>
 <title>Overview of the protocol.</title>
 
 <para>
@@ -99,7 +99,7 @@ As a member of an Application Group, when an application creates and maps a wind
 </para>
 
 </sect1>
-<sect1 id='requests'>
+<sect1 id='Requests'>
 <title>Requests</title>
 
 
@@ -343,10 +343,10 @@ This request destroys the association created with AppGroupCreateAssociation. Th
 
 </sect1>
 
-<sect1 id='changes_to_existing_requests'>
+<sect1 id='Changes_to_Existing_Requests'>
 <title>Changes to Existing Requests</title>
 
-<sect2 id='mapwindow'>
+<sect2 id='MapWindow'>
 <title>MapWindow</title>
 
 <para>
@@ -354,7 +354,7 @@ If the override-redirect attribute of the window is False and if the window is a
 </para>
 
 </sect2>
-<sect2 id='configurewindow'>
+<sect2 id='ConfigureWindow'>
 <title>ConfigureWindow</title>
 
 <para>
@@ -362,7 +362,7 @@ If the override-redirect attribute of the window is False and if the window is a
 </para>
 
 </sect2>
-<sect2 id='createwindow'>
+<sect2 id='CreateWindow'>
 <title>CreateWindow</title>
 
 <para>
@@ -375,7 +375,7 @@ When a program in an Application Group creates a window that is a child of a roo
 
 </sect2>
 
-<sect2 id='changewindowattributes'>
+<sect2 id='ChangeWindowAttributes'>
 <title>ChangeWindowAttributes</title>
 
 <para>
@@ -386,7 +386,7 @@ When a program in an Application Group changes the attributes of a window that i
 
 </sect1>
 
-<sect1 id='changes_to_existing_events'>
+<sect1 id='Changes_to_Existing_Events'>
 <title>Changes to Existing Events</title>
 
 <para>
@@ -398,7 +398,7 @@ The Application Group Leader must not select SubstructuRedirect events on a root
 </para></note>
 
 
-<sect2 id='maprequest'>
+<sect2 id='MapRequest'>
 <title>MapRequest</title>
 
 <para>
@@ -406,7 +406,7 @@ When a MapWindow request is received for a window whose override-redirect attrib
 </para>
 
 </sect2>
-<sect2 id='configurerequest'>
+<sect2 id='ConfigureRequest'>
 <title>ConfigureRequest</title>
 
 <para>
@@ -416,10 +416,10 @@ When a ConfigureWindow request is received for a window whose override-redirect 
 </sect2>
 </sect1>
 
-<sect1 id='errors'>
+<sect1 id='Errors'>
 <title>Errors</title>
 
-<sect2 id='appgroupqueryversion'>
+<sect2 id='AppGroupQueryVersion'>
 <title>AppGroupQueryVersion</title>
 
 <para>
@@ -428,7 +428,7 @@ There are no errors for AppGroupQueryVersion.
 
 </sect2>
 
-<sect2 id='appgroupcreate'>
+<sect2 id='AppGroupCreate'>
 <title>AppGroupCreate</title>
 
 <para>
@@ -453,7 +453,7 @@ A Match error is returned if root_visual does not exist for the screen of the de
 
 </sect2>
 
-<sect2 id='appgroupdestroy'>
+<sect2 id='AppGroupDestroy'>
 <title>AppGroupDestroy</title>
 
 <para>
@@ -466,7 +466,7 @@ An Access error is returned if an untrusted application attempts to destroy an A
 
 </sect2>
 
-<sect2 id='appgroupgetattr'>
+<sect2 id='AppGroupGetAttr'>
 <title>AppGroupGetAttr</title>
 
 <para>
@@ -479,7 +479,7 @@ An Access error is returned if an untrusted application attempts to get the attr
 
 </sect2>
 
-<sect2 id='appgroupquery'>
+<sect2 id='AppGroupQuery'>
 <title>AppGroupQuery</title>
 
 <para>
@@ -488,7 +488,7 @@ An Access error is returned if an untrusted application attempts to query the Ap
 
 </sect2>
 
-<sect2 id='appgroupcreateassociation'>
+<sect2 id='AppGroupCreateAssociation'>
 <title>AppGroupCreateAssociation</title>
 
 <para>
@@ -505,7 +505,7 @@ A Window error may be returned for system-specific errors related to system_wind
 
 </sect2>
 
-<sect2 id='appgroupdestroyassociation'>
+<sect2 id='AppGroupDestroyAssociation'>
 <title>AppGroupDestroyAssociation</title>
 
 <para>
@@ -515,7 +515,7 @@ A Window error is returned if window was not specified in a previous AppGroupCre
 </sect2>
 </sect1>
 
-<sect1 id='encoding'>
+<sect1 id='Encoding'>
 <title>Encoding</title>
 
 <para>
@@ -643,7 +643,7 @@ VALUEs
 
 </sect1>
 
-<sect1 id='library_api'>
+<sect1 id='Library_API'>
 <title>Library API</title>
 
 <informaltable frame='none'>

@@ -138,7 +138,7 @@ the net, or in some other environment where the extension will not work.
 To perform this check, call either
 </para>
 
-<funcsynopsis id='xshmqueryextension'>
+<funcsynopsis id='XShmQueryExtension'>
 <funcprototype>
   <funcdef>Status <function>XShmQueryExtension</function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>
@@ -149,7 +149,7 @@ To perform this check, call either
 or
 </para>
 
-<funcsynopsis id='xshmqueryversion'>
+<funcsynopsis id='XShmQueryVersion'>
 <funcprototype>
   <funcdef>Status <function>XShmQueryVersion</function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>
@@ -203,7 +203,7 @@ Use the shared memory XImage, much like a normal one.
 To create a shared memory XImage, use:
 </para>
 
-<funcsynopsis id='xshmcreateimage'>
+<funcsynopsis id='XShmCreateImage'>
 <funcprototype>
   <funcdef>XImage <function>*XShmCreateImage</function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>
@@ -318,7 +318,7 @@ ready for use.
 To write a shared memory XImage into an X drawable, use XShmPutImage:
 </para>
 
-<funcsynopsis id='xshmputimage'>
+<funcsynopsis id='XShmPutImage'>
 <funcprototype>
   <funcdef>Status <function>XShmPutImage </function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>
@@ -381,7 +381,7 @@ completion event, the results you see on the screen may be inconsistent.
 To read image data into a shared memory XImage, use the following:
 </para>
 
-<funcsynopsis id='xshmgetimage'>
+<funcsynopsis id='XShmGetImage'>
 <funcprototype>
   <funcdef>Status <function>XShmGetImage </function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>
@@ -424,7 +424,7 @@ format is) and independent of the screen.  Use XShmPixmapFormat to get the
 format for the server:
 </para>
 
-<funcsynopsis id='xshmpixmapformat'>
+<funcsynopsis id='XShmPixmapFormat'>
 <funcprototype>
   <funcdef>int <function>XShmPixmapFormat</function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>
@@ -444,7 +444,7 @@ bytes_per_line value to use.
 Once you have your shminfo structure filled in, simply call:
 </para>
 
-<funcsynopsis id='xshmcreatepixmap'>
+<funcsynopsis id='XShmCreatePixmap'>
 <funcprototype>
   <funcdef>Pixmap <function>XShmCreatePixmap</function></funcdef>
     <paramdef>Display <parameter>*display</parameter></paramdef>

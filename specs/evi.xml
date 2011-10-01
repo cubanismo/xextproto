@@ -292,7 +292,7 @@ No new events or errors are defined by this extension.
 </para>
 </chapter>
 
-<chapter id="Changes_to_existing_protocol_">
+<chapter id='Changes_to_existing_protocol'>
 <title>Changes to existing protocol.</title>
 <para>
 None.
@@ -375,7 +375,7 @@ The include file for this extension is:
 <function>&lt; X11/extensions/XEVI.h&gt;</function>.
 </para>
 
-<funcsynopsis id='xeviqueryversion'>
+<funcsynopsis id='XeviQueryVersion'>
 <funcprototype>
   <funcdef>Bool <function> XeviQueryVersion</function></funcdef>
   <paramdef>Display<parameter> *display</parameter></paramdef>
@@ -434,7 +434,7 @@ To get the extended information for any subset of visuals use
 XeviGetVisualInfo.
 </para>
 
-<funcsynopsis id='xevigetvisualinfo'>
+<funcsynopsis id='XeviGetVisualInfo'>
 <funcprototype>
   <funcdef>int <function> XeviGetVisualInfo</function></funcdef>
   <paramdef>Display<parameter> *display</parameter></paramdef>
