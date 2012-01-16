@@ -336,25 +336,26 @@ extension is usable by the client.  This document defines major version one
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>dest</emphasis>: WINDOW</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>destKind</emphasis>: SHAPE_KIND</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>op</emphasis>: SHAPE_OP</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>xOff, yOff</emphasis>: INT16</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>rectangles</emphasis>: LISTofRECTANGLES</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry><emphasis remap='I'>ordering</emphasis>:
 { <function>UnSorted</function>,
 <function>YSorted</function>,
@@ -362,7 +363,7 @@ extension is usable by the client.  This document defines major version one
 <function>YXBanded</function> }
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -427,10 +428,11 @@ extents.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>dest</emphasis>: WINDOW
 <emphasis remap='I'>destKind</emphasis>: SHAPE_KIND
@@ -440,7 +442,7 @@ extents.
 <function>None</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -482,40 +484,41 @@ error results.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>dest</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>destKind</emphasis>: SHAPE_KIND
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>op</emphasis>: SHAPE_OP
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>xOff, yOff</emphasis>: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>source</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>sourceKind</emphasis>: SHAPE_KIND
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -543,25 +546,26 @@ error results.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>dest</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>destKind</emphasis>: SHAPE_KIND
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>xOff, yOff</emphasis>: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -583,10 +587,11 @@ current position by the amounts xOff and yOff.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>dest</emphasis>: WINDOW
       </entry>
@@ -600,60 +605,61 @@ current position by the amounts xOff and yOff.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 boundingShaped: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 clipShaped: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 xBoundingShape: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 yBoundingShape: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 widthBoundingShape: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 heightBoundingShape: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 xClipShape: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 yClipShape: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 widthClipShape: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 heightClipShape: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>
@@ -678,20 +684,21 @@ corresponding default region are reported.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>window</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>enable</emphasis>: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -719,21 +726,22 @@ causes the server to stop sending such events.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>window</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 =&gt;
 enable: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>
@@ -755,26 +763,27 @@ events for the window are generated for this client.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>window</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>kind</emphasis>: SHAPE_KIND
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
    =&gt;
 rectangles: LISTofRECTANGLE
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 ordering:
 { <function>UnSorted</function>,
@@ -783,7 +792,7 @@ ordering:
 <function>YXBanded</function> }
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window,</function>
@@ -810,36 +819,37 @@ request.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <?dbfo keep-together="always" ?>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>window</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>kind</emphasis>: SHAPE_KIND
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>shaped</emphasis>: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>x, y</emphasis>: INT16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>width</emphasis>,
 <emphasis remap='I'>height</emphasis>: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>time</emphasis>: TIMESTAMP
       </entry>

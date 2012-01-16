@@ -178,11 +178,11 @@ subsequent sections:
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='2' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
-  <colspec colname='c2' colsep="0" colwidth="1*"/>
+  <tgroup cols='2' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
+  <colspec colname='c2' colwidth="3.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry namest="c1" nameend="c2">
 FAKE_EVENT_TYPE
 { <function>KeyPress</function>,
@@ -192,26 +192,26 @@ FAKE_EVENT_TYPE
 <function>ButtonRelease</function> }
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry></entry>
     </row>
     <row>
       <entry>FAKE_EVENT</entry>
       <entry>[type: FAKE_EVENT_TYPE,</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry></entry>
       <entry>detail: BYTE,</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry></entry>
       <entry>time: TIME,</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry></entry>
       <entry>root: WINDOW,</entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry></entry>
       <entry>rootX, rootY: INT16]</entry>
     </row>
@@ -245,15 +245,15 @@ not required, respectively.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>gc</emphasis>: "GC"
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>gid</emphasis>: GCONTEXT
       </entry>
@@ -272,15 +272,15 @@ the value specified by gid.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>visual</emphasis>: "VISUAL"
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>visualid</emphasis>: VISUALID
       </entry>
@@ -299,20 +299,20 @@ the value specified by visualid.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>dpy</emphasis>: "CONNECTION"
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 =&gt;
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 status: BOOL
       </entry>
@@ -340,35 +340,35 @@ otherwise.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>clientMajorVersion</emphasis>: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>clientMinorVersion</emphasis>: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
    =&gt;
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 serverMajorVersion: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 serverMinorVersion: CARD16
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors: <function>Length</function>
       </entry>
@@ -389,15 +389,15 @@ extension is usable by the client.  This document defines major version two
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>window</emphasis>: WINDOW
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>cursor-id</emphasis>: CURSOR or
 <function>CurrentCursor</function>
@@ -405,17 +405,17 @@ or
 <function>None</function>
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 =&gt;
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 same: BOOL
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -441,15 +441,15 @@ the result of the comparison in same.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>events</emphasis>: LISTofFAKE_EVENT
       </entry>
     </row>
-    <row rowsep="0">
+    <row>
       <entry>
 Errors:
 <function>Window</function>,
@@ -585,10 +585,10 @@ error occurs.
 </para>
 
 <informaltable frame="none">
-  <tgroup cols='1' align='left'>
-  <colspec colname='c1' colsep="0" colwidth="1*"/>
+  <tgroup cols='1' align='left' colsep='0' rowsep='0'>
+  <colspec colname='c1' colwidth="1.0*"/>
   <tbody>
-    <row rowsep="0">
+    <row>
       <entry>
 <emphasis remap='I'>impervious</emphasis>: BOOL
       </entry>
