@@ -14,6 +14,7 @@ XORG_WITH_FOP
 XORG_WITH_XSLTPROC
 XORG_CHECK_SGML_DOCTOOLS(1.8)
 
-AC_OUTPUT([Makefile
+AC_CONFIG_FILES([Makefile
            specs/Makefile
            xextproto.pc])
+AC_OUTPUT
